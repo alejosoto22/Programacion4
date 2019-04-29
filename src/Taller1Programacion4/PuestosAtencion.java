@@ -1,6 +1,6 @@
 package Taller1Programacion4;
 
-public class PuestoAtencion {
+public class PuestosAtencion {
 	
 	private NodoPuestosAtencion cabezaPuesto;
 	private NodoPuestosAtencion colaPuesto;
