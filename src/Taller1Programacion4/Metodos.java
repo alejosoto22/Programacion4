@@ -66,37 +66,53 @@ public class Metodos {
 	}
 
 	public void buscar0(NodoTurnero nodo, NodoTurnero nodoActual) {
-		if (nodoActual == null) {
+		if(nodoActual == null) {
 			this.colaDeTurnosPorPrioridad.setCabezaTurno(nodo);
-		//	this.colaDeTurnosPorPrioridad.getCabezaTurno().setAnteriorTurno(null);
 			this.colaDeTurnosPorPrioridad.setColaTurno(nodo);
 			this.colaDeTurnosPorPrioridad.getColaTurno().setConsecutivoTurno(1);
 			this.colaDeTurnosPorPrioridad.getCabezaTurno().setConsecutivoTurno(1);
 		} else {
+			if(nodoActual != null) {
 			if (nodoActual.getCliente().getPrioridad() == 0) {
 
-				if (nodo.getCliente().getPrioridad() == 1) {
+				if(nodo.getCliente().getPrioridad() == 1) {
 					nodoActual.setAnteriorTurno(nodo);
 					nodo.setSiguienteTurno(nodoActual);
-					this.colaDeTurnosPorPrioridad.setCabezaTurno(nodo);
-					this.colaDeTurnosPorPrioridad.getCabezaTurno().setAnteriorTurno(null);
+					if(nodoActual == this.colaDeTurnosPorPrioridad.getCabezaTurno()) {
+						this.colaDeTurnosPorPrioridad.setCabezaTurno(nodo);
+					}
 				} else {
 					this.colaDeTurnosPorPrioridad.getColaTurno().setSiguienteTurno(nodo);
 					nodo.setAnteriorTurno(this.colaDeTurnosPorPrioridad.getColaTurno());
 					this.colaDeTurnosPorPrioridad.setColaTurno(nodo);
-					this.colaDeTurnosPorPrioridad.getColaTurno().setSiguienteTurno(null);
-					if(nodoActual.getSiguienteTurno().getSiguienteTurno().getCliente().getId() == nodoActual.getCliente().getId()) {
-						nodoActual.getSiguienteTurno().setSiguienteTurno(null);
-					}
 				}
-			} else {if (nodoActual.getCliente().getPrioridad() == 1) {
+			} else {if(nodoActual.getCliente().getPrioridad() == 1) {
 						if (nodoActual.getSiguienteTurno() == null) {
 							nodoActual.setSiguienteTurno(nodo);
 							nodo.setAnteriorTurno(nodoActual);
 							this.colaDeTurnosPorPrioridad.setColaTurno(nodo);
-							this.colaDeTurnosPorPrioridad.getColaTurno().setSiguienteTurno(null);
-						} else {
-								if (nodoActual.getSiguienteTurno().getCliente().getPrioridad() == 0) {
+						} else {if(nodoActual.getSiguienteTurno().getCliente().getPrioridad() == 1) {
+									buscar0(nodo, nodoActual.getSiguienteTurno());
+								} else {if(nodo.getCliente().getPrioridad() == 1) {
+												nodo.setAnteriorTurno(nodoActual);
+												nodo.setSiguienteTurno(nodoActual.getSiguienteTurno());
+												nodoActual.setSiguienteTurno(nodo);
+												nodo.getSiguienteTurno().setAnteriorTurno(nodo);
+											} else {this.colaDeTurnosPorPrioridad.getColaTurno().setSiguienteTurno(nodo);
+													nodo.setAnteriorTurno(this.colaDeTurnosPorPrioridad.getColaTurno());
+													this.colaDeTurnosPorPrioridad.setColaTurno(nodo);
+											}	
+										}
+							// System.out.println("error");
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	/*
+	if (nodoActual.getSiguienteTurno().getCliente().getPrioridad() == 0) {
 									if (nodo.getCliente().getPrioridad() == 1) {
 										nodo.setAnteriorTurno(nodoActual);
 										nodo.setSiguienteTurno(nodoActual.getSiguienteTurno());
@@ -114,12 +130,13 @@ public class Metodos {
 								buscar0(nodo, nodoActual.getSiguienteTurno());
 							}
 							// System.out.println("error");
-			//			}
+						}
 					}
 				}
 			}
 		}
 	}
+	*/
 
 	/*
 	 * if

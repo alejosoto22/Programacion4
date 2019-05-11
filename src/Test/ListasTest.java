@@ -35,26 +35,29 @@ class ListasTest extends Turnero {
 //		assertEquals(prueba.getColaDeTurnosPorPrioridad().getColaTurno().getAnteriorTurno().getCliente().getNombre(), "juan");		
 	}
 	
-/*	@Test
-	void testBuscar0() {
+	@Test
+	void testBuscar0() {	// TEST DEL METODO OK
 		Metodos prueba = new Metodos();
-		prueba.encolarTurno("carlos", 002, "servicio1", 0);
-		prueba.encolarTurno("juan", 001, "servicio2", 0);
-//		prueba.encolarTurno("mario", 003, "servicio1", 0);
-//		prueba.encolarTurno("alejo", 005, "servicio3", 1);
+		NodoTurnero nodo = new NodoTurnero("carlos", 002, "servicio1", 0);
+		NodoTurnero nodo2 = new NodoTurnero("luis", 002, "servicio1", 1);
+		NodoTurnero nodo3 = new NodoTurnero("juan", 002, "servicio1", 0);
+		NodoTurnero nodo4 = new NodoTurnero("mario", 002, "servicio1", 1);
 		
-		NodoTurnero nuevo = new NodoTurnero("mateo", 002, "servicio1", 1);
-		prueba.buscar0(nuevo, prueba.getColaDeTurnosPorPrioridad().getCabezaTurno());
+		prueba.buscar0(nodo, prueba.getColaDeTurnosPorPrioridad().getCabezaTurno());
+		prueba.buscar0(nodo2, prueba.getColaDeTurnosPorPrioridad().getCabezaTurno());
+		prueba.buscar0(nodo3, prueba.getColaDeTurnosPorPrioridad().getCabezaTurno());
+		prueba.buscar0(nodo4, prueba.getColaDeTurnosPorPrioridad().getCabezaTurno());
 		
-		assertEquals(prueba.getColaDeTurnos().getCabezaTurno().getCliente().getNombre(), "carlos");
-		assertEquals(prueba.getColaDeTurnos().getCabezaTurno().getSiguienteTurno().getCliente().getNombre(), "juan");
-		assertEquals(prueba.getColaDeTurnos().getCabezaTurno().getSiguienteTurno().getSiguienteTurno().getCliente().getNombre(), "mario");
-		assertEquals(prueba.getColaDeTurnos().getColaTurno().getCliente().getNombre(), "alejo");
+		assertEquals(prueba.getColaDeTurnosPorPrioridad().getCabezaTurno().getCliente().getNombre(), "luis");
+		assertEquals(prueba.getColaDeTurnosPorPrioridad().getCabezaTurno().getSiguienteTurno().getCliente().getNombre(), "mario");
+		assertEquals(prueba.getColaDeTurnosPorPrioridad().getCabezaTurno().getSiguienteTurno().getSiguienteTurno().getCliente().getNombre(), "carlos");
+		assertEquals(prueba.getColaDeTurnosPorPrioridad().getCabezaTurno().getSiguienteTurno().getSiguienteTurno().getSiguienteTurno().getCliente().getNombre(), "juan");
+		assertEquals(prueba.getColaDeTurnosPorPrioridad().getColaTurno().getCliente().getNombre(), "juan");
 				
 		
 	}
-*/
-	@Test
+
+/*	@Test
 	void testAsignarOrdenandoPorPrioridad() {
 		Metodos prueba = new Metodos();
 		prueba.asignarOrdenandoPorPrioridad("carlos", 002, "servicio1", 0);
@@ -67,7 +70,7 @@ class ListasTest extends Turnero {
 		assertEquals(prueba.getColaDeTurnosPorPrioridad().getColaTurno().getCliente().getNombre(), "juan");
 	}
 	
-	
+	*/
 	
 	@Test
 	void testInsertarEnServicio() {
