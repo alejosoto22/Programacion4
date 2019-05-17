@@ -64,11 +64,13 @@ public class Metodos {
 
 	// METODO QUE INSERTA EN LA LISTA "colaDeTurnosPorPrioridad" ORDENANDO SEGÚN LA PRIORIDAD QUE TENGA CADA CLIENTE.
 	public void insertarOrdenado(NodoTurnero nodo, NodoTurnero nodoActual) {
+		NodoTurnero nuevoNodo = new NodoTurnero();
+		nuevoNodo = nodo;
 		if (nodoActual == null) {
-			this.colaDeTurnosPorPrioridad.setCabezaTurnoPorPrioridad(nodo);
+			this.colaDeTurnosPorPrioridad.setCabezaTurnoPorPrioridad(nuevoNodo);
 			this.colaDeTurnosPorPrioridad.getCabezaTurnoPorPrioridad().setSiguienteTurno(null);
 			this.colaDeTurnosPorPrioridad.getCabezaTurnoPorPrioridad().setAnteriorTurno(null);
-			this.colaDeTurnosPorPrioridad.setColaTurnoPorPrioridad(nodo);
+			this.colaDeTurnosPorPrioridad.setColaTurnoPorPrioridad(nuevoNodo);
 			this.colaDeTurnosPorPrioridad.getColaTurnoPorPrioridad().setSiguienteTurno(null);
 			this.colaDeTurnosPorPrioridad.getColaTurnoPorPrioridad().setAnteriorTurno(null);
 			this.colaDeTurnosPorPrioridad.getColaTurnoPorPrioridad().setConsecutivoTurno(1);
@@ -77,39 +79,39 @@ public class Metodos {
 			if (nodoActual != null) {
 				if (nodoActual.getCliente().getPrioridad() == 0) {
 
-					if (nodo.getCliente().getPrioridad() == 1) {
-						nodoActual.setAnteriorTurno(nodo);
-						nodo.setSiguienteTurno(nodoActual);
+					if (nuevoNodo.getCliente().getPrioridad() == 1) {
+						nodoActual.setAnteriorTurno(nuevoNodo);
+						nuevoNodo.setSiguienteTurno(nodoActual);
 						if (nodoActual == this.colaDeTurnosPorPrioridad.getCabezaTurnoPorPrioridad()) {
-							this.colaDeTurnosPorPrioridad.setCabezaTurnoPorPrioridad(nodo);
-							System.out.println("entró al primero");
+							this.colaDeTurnosPorPrioridad.setCabezaTurnoPorPrioridad(nuevoNodo);
+						//	System.out.println("entró al primero");
 						}			
 					} else {
-						this.colaDeTurnosPorPrioridad.getColaTurnoPorPrioridad().setSiguienteTurno(nodo);
-						nodo.setAnteriorTurno(this.colaDeTurnosPorPrioridad.getColaTurnoPorPrioridad());
-						this.colaDeTurnosPorPrioridad.setColaTurnoPorPrioridad(nodo);
+						this.colaDeTurnosPorPrioridad.getColaTurnoPorPrioridad().setSiguienteTurno(nuevoNodo);
+						nuevoNodo.setAnteriorTurno(this.colaDeTurnosPorPrioridad.getColaTurnoPorPrioridad());
+						this.colaDeTurnosPorPrioridad.setColaTurnoPorPrioridad(nuevoNodo);
 						this.colaDeTurnosPorPrioridad.getColaTurnoPorPrioridad().setSiguienteTurno(null);
 					}
 				} else {
 					if (nodoActual.getCliente().getPrioridad() == 1) {
 						if (nodoActual.getSiguienteTurno() == null) {
-							nodoActual.setSiguienteTurno(nodo);
-							nodo.setAnteriorTurno(nodoActual);
-							this.colaDeTurnosPorPrioridad.setColaTurnoPorPrioridad(nodo);
+							nodoActual.setSiguienteTurno(nuevoNodo);
+							nuevoNodo.setAnteriorTurno(nodoActual);
+							this.colaDeTurnosPorPrioridad.setColaTurnoPorPrioridad(nuevoNodo);
 							this.colaDeTurnosPorPrioridad.getColaTurnoPorPrioridad().setSiguienteTurno(null);
 						} else {
 							if (nodoActual.getSiguienteTurno().getCliente().getPrioridad() == 1) {
-								insertarOrdenado(nodo, nodoActual.getSiguienteTurno());
+								insertarOrdenado(nuevoNodo, nodoActual.getSiguienteTurno());
 							} else {
-								if (nodo.getCliente().getPrioridad() == 1) {
-									nodo.setAnteriorTurno(nodoActual);
-									nodo.setSiguienteTurno(nodoActual.getSiguienteTurno());
-									nodoActual.setSiguienteTurno(nodo);
-									nodo.getSiguienteTurno().setAnteriorTurno(nodo);
+								if (nuevoNodo.getCliente().getPrioridad() == 1) {
+									nuevoNodo.setAnteriorTurno(nodoActual);
+									nuevoNodo.setSiguienteTurno(nodoActual.getSiguienteTurno());
+									nodoActual.setSiguienteTurno(nuevoNodo);
+									nuevoNodo.getSiguienteTurno().setAnteriorTurno(nuevoNodo);
 								} else {
-									this.colaDeTurnosPorPrioridad.getColaTurnoPorPrioridad().setSiguienteTurno(nodo);
-									nodo.setAnteriorTurno(this.colaDeTurnosPorPrioridad.getColaTurnoPorPrioridad());
-									this.colaDeTurnosPorPrioridad.setColaTurnoPorPrioridad(nodo);
+									this.colaDeTurnosPorPrioridad.getColaTurnoPorPrioridad().setSiguienteTurno(nuevoNodo);
+									nuevoNodo.setAnteriorTurno(this.colaDeTurnosPorPrioridad.getColaTurnoPorPrioridad());
+									this.colaDeTurnosPorPrioridad.setColaTurnoPorPrioridad(nuevoNodo);
 									this.colaDeTurnosPorPrioridad.getColaTurnoPorPrioridad().setSiguienteTurno(null);
 								}
 							}
@@ -120,11 +122,17 @@ public class Metodos {
 		}
 	}
 	
+	public void turnero(String nombre, int id, String servicio, int prioridad) {
+		NodoTurnero nuevoNodo = new NodoTurnero(nombre, id, servicio, prioridad);
+		insertar(nombre, id, servicio, prioridad);
+		insertarOrdenado(nuevoNodo, this.colaDeTurnosPorPrioridad.getCabezaTurnoPorPrioridad());
+	}
+	
 	// METODO ENCOLAR EN LA LISTA SERVICIOS
-	public void insertarEnServicio(NodoTurnero nodo) {
+/*	public void insertarEnServicio(NodoTurnero nodo) {
 		if (this.listaDeServicios.getCabezaServicio() == null) {
 			NodoServicios nuevoServicio = new NodoServicios();
-			this.listaDeServicios.setCabezaServicio(nuevoServicio);
+			
 			Turnero colaServicio = new Turnero();
 			NodoTurnero nuevoNodoTurnero = new NodoTurnero();
 			colaServicio.setCabezaTurno(nuevoNodoTurnero);
@@ -133,6 +141,28 @@ public class Metodos {
 			this.listaDeServicios.setCabezaServicio(nuevoServicio);
 
 		}
+	}*/
+	
+	public void insertarEnServicio(NodoTurnero nodo) {
+		if (this.listaDeServicios.getCabezaServicio() == null) {
+			NodoServicios nuevoServicio = new NodoServicios();
+			
+			Turnero colaServicio = new Turnero();
+			NodoTurnero nuevoNodoTurnero = new NodoTurnero();
+			nuevoNodoTurnero = nodo;
+			colaServicio.setCabezaTurno(nuevoNodoTurnero);
+			colaServicio.getCabezaTurno().setCliente(nodo.getCliente());
+			nuevoServicio.setDatoServicio(colaServicio);
+			this.listaDeServicios.setCabezaServicio(nuevoServicio);
+
+		}
 	}
+	
+	
+	
+	
+	
+	
+	
 
 }

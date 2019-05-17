@@ -26,7 +26,7 @@ public class TiempoLlenado {
 			Double VolTanque = Math.PI*r*r*h;							// Está en m^3
 			Double TiempoDeLlenado = VolTanque/VolLluviaXhora;			// Está en horas
 			long tiempo = Math.round(TiempoDeLlenado);
-			
+			if(a >= 0 && l >= 0 && n >= 0 && b >= 0 && r >= 0 && h >= 0 && x >= 0) {
 			System.out.println("Lado del techo = " + a + " mts");
 			System.out.println("Lado del techo y canal = " + l + " mts");
 			System.out.println("Angulo de inclinacion del techo = " + argumento[2] + " grados");
@@ -35,6 +35,9 @@ public class TiempoLlenado {
 			System.out.println("Altura del tanque = " + h + " mts");
 			System.out.println("Cantidad de lluvia = " + a + " ml/dm^2");
 			System.out.println("El tanque se llena en " + tiempo + " horas");
+			}else {System.out.println("ERROR, el dato ingresado no puede ser negativo");
+				
+			}
 		}
 	}
 }
