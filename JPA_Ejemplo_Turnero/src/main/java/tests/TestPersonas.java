@@ -19,21 +19,26 @@ public class TestPersonas {
 		emf = Persistence.createEntityManagerFactory("Persistencia");
 		manager = emf.createEntityManager();
 		
+		insertarInicial();
+				
+		imprimirTodo();
+		
+	}
+	
+	private static void insertarInicial() {
 		Persona a = new Persona("aleja", 001, "servicio 1", 0);
 		Persona b = new Persona("willy", 002, "servicio 2", 1);
 		Persona c = new Persona("alejo", 003, "servicio 1", 1);
 		
 		manager.getTransaction().begin();
 		manager.persist(a);
-		manager.persist(b);
-		manager.persist(c);
-		manager.getTransaction().commit();
+		a.setNombre("carlos");	// Con set se puede reescribir (modificar) la información.
 		
-		imprimirTodo();
-						
-	//	List<Persona> personas = (List<Persona>) manager.createQuery("FROM Persona").getResultList();
-	//	System.out.println("En esta Base de Datos hay " + personas.size() + " personas.");
-
+		manager.persist(b);
+		
+		manager.persist(c);
+		
+		manager.getTransaction().commit();
 	}
 	@SuppressWarnings("unchecked")
 	private static void imprimirTodo() {

@@ -12,10 +12,6 @@ public class NodoServicios {
 		
 	}
 	
-/*	public NodoServicios(NodoTurnero nodo) {
-		this.datoServicio = new Turnero(nodo);
-	}*/
-	
 	public int getConsecutivoServicio() {
 		return consecutivoServicio;
 	}
