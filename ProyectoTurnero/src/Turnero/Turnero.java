@@ -4,29 +4,29 @@ public class Turnero {
 	
 	private NodoTurnero cabezaTurno = null;
 	private NodoTurnero colaTurno = null;
-	private NodoTurnero cabezaTurnoPorPrioridad = null;
-	private NodoTurnero colaTurnoPorPrioridad = null;
+//	private NodoTurnero cabezaTurno = null;
+//	private NodoTurnero colaTurno = null;
 	private int tamañoTurno = 0;
 	
 	public Turnero() {
 	}
 		
-	public NodoTurnero getCabezaTurnoPorPrioridad() {
-		return cabezaTurnoPorPrioridad;
+/*	public NodoTurnero getCabezaTurno() {
+		return cabezaTurno;
 	}
 
-	public void setCabezaTurnoPorPrioridad(NodoTurnero cabezaTurnoPorPrioridad) {
-		this.cabezaTurnoPorPrioridad = cabezaTurnoPorPrioridad;
+	public void setCabezaTurno(NodoTurnero cabezaTurno) {
+		this.cabezaTurno = cabezaTurno;
 	}
 
-	public NodoTurnero getColaTurnoPorPrioridad() {
-		return colaTurnoPorPrioridad;
+	public NodoTurnero getColaTurno() {
+		return colaTurno;
 	}
 
-	public void setColaTurnoPorPrioridad(NodoTurnero colaTurnoPorPrioridad) {
-		this.colaTurnoPorPrioridad = colaTurnoPorPrioridad;
+	public void setColaTurno(NodoTurnero colaTurno) {
+		this.colaTurno = colaTurno;
 	}
-
+*/
 	public NodoTurnero getCabezaTurno() {
 		return cabezaTurno;
 	}
