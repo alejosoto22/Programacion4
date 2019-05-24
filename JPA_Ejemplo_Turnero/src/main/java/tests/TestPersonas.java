@@ -32,7 +32,7 @@ public class TestPersonas {
 		
 		manager.getTransaction().begin();
 		manager.persist(a);
-		a.setNombre("carlos");	// Con set se puede reescribir (modificar) la información.
+//		a.setNombre("carlos");	// Con set se puede reescribir (modificar) la información.
 		
 		manager.persist(b);
 		
