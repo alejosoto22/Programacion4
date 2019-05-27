@@ -7,12 +7,16 @@ public class Persona {
 	private String servicio;
 	private int prioridad;
 	
-	public Persona(String nombre, int id, String servicio, int prioridad) {
+	private String servicioAsesor1;
+	private String servicioAsesor2;
+	private String servicioAsesor3;
+	private boolean estadoAsesor;
+	
+	public Persona(String nombre, int id) {
 
 		this.nombre = nombre;
 		this.id = id;
-		this.servicio = servicio;
-		this.prioridad = prioridad;
+		
 	}
 	
 	public String getNombre() {
@@ -46,6 +50,38 @@ public class Persona {
 	public void setPrioridad(int prioridad) {
 		this.prioridad = prioridad;
 	}
-	 
+	
+	public String getServicioAsesor1() {
+		return servicioAsesor1;
+	}
+
+	public void setServicioAsesor1(String servicioAsesor1) {
+		this.servicioAsesor1 = servicioAsesor1;
+	}
+
+	public String getServicioAsesor2() {
+		return servicioAsesor2;
+	}
+
+	public void setServicioAsesor2(String servicioAsesor2) {
+		this.servicioAsesor2 = servicioAsesor2;
+	}
+
+	public String getServicioAsesor3() {
+		return servicioAsesor3;
+	}
+
+	public void setServicioAsesor3(String servicioAsesor3) {
+		this.servicioAsesor3 = servicioAsesor3;
+	}
+
+	public boolean isEstadoAsesor() {
+		return estadoAsesor;
+	}
+
+	public void setEstadoAsesor(boolean estadoAsesor) {
+		this.estadoAsesor = estadoAsesor;
+	}
+	
 
 }

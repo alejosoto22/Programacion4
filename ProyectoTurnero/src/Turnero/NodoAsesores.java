@@ -2,23 +2,42 @@ package Turnero;
 
 public class NodoAsesores {
 	
+	private Persona asesor;
 	private int consecutivoAsesor = 0;
 	private NodoAsesores anteriorAsesor;
 	private NodoAsesores siguienteAsesor;
-	private Servicios filaDeServicio;
+	private Turnero datoAsesor;
 	
-	
-	
+		
 	public NodoAsesores() {
+		
+	}
+	
+	 public NodoAsesores(String nombre, int idAsesor, boolean estado, String primerServicio, String segundoServicio, String tercerServicio) {
+		this.asesor = new Persona(nombre, idAsesor);
+		this.asesor.setEstadoAsesor(estado);
+		this.asesor.setServicioAsesor1(primerServicio);
+		this.asesor.setServicioAsesor2(segundoServicio);
+		this.asesor.setServicioAsesor3(tercerServicio);
+		
+	 }
+	
+	public Turnero getDatoAsesor() {
+		return datoAsesor;
+	}
 
+	public void setDatoAsesor(Turnero datoAsesor) {
+		this.datoAsesor = datoAsesor;
+	}
+	
+	public Persona getAsesor() {
+		return asesor;
+	}
 
+	public void setAsesor(Persona asesor) {
+		this.asesor = asesor;
 	}
-	public Servicios getFilaDeServicio() {
-		return filaDeServicio;
-	}
-	public void setFilaDeServicio(Servicios filaDeServicio) {
-		this.filaDeServicio = filaDeServicio;
-	}
+
 	public int getConsecutivoAsesor() {
 		return consecutivoAsesor;
 	}
@@ -37,5 +56,6 @@ public class NodoAsesores {
 	public void setSiguienteAsesor(NodoAsesores siguienteAsesor) {
 		this.siguienteAsesor = siguienteAsesor;
 	}
+	
 	
 }

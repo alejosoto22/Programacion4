@@ -36,7 +36,7 @@ public class Metodos {
 		this.listaDeServicios = listaDeServicios;
 	}
 
-	public Turnero getColaDeTurnosPorPrioridad() {
+	public Turnero getlistaDeTurnos() {
 		return colaDeTurnosPorPrioridad;
 	}
 
@@ -65,7 +65,7 @@ public class Metodos {
 
 	// METODO QUE INSERTA EN LA LISTA "colaDeTurnosPorPrioridad" ORDENANDO SEGÚN LA
 	// PRIORIDAD QUE TENGA CADA CLIENTE.
-	public void insertarOrdenado(NodoTurnero nodo, NodoTurnero nodoActual) {
+/*	public void insertarOrdenado(NodoTurnero nodo, NodoTurnero nodoActual) {
 		NodoTurnero nuevoNodo = new NodoTurnero();
 		nuevoNodo = nodo;
 		if (nodoActual == null) {
@@ -122,12 +122,12 @@ public class Metodos {
 				}
 			}
 		}
-	}
+	}*/
 
 	public void turnero(String nombre, int id, String servicio, int prioridad) {
 		NodoTurnero nuevoNodo = new NodoTurnero(nombre, id, servicio, prioridad);
 		insertar(nombre, id, servicio, prioridad);
-		insertarOrdenado(nuevoNodo, this.colaDeTurnosPorPrioridad.getCabezaTurno());
+//		asignarTurno(nuevoNodo, this.colaDeTurnosPorPrioridad.getCabezaTurno());
 	}
 
 	public void insertarEnServicio(NodoTurnero nodo, NodoServicios actual) {
