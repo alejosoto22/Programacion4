@@ -1,6 +1,7 @@
 package Turnero;
 
 public class PuestosAtencion {
+	// Clase donde se atiende a las personas.
 	
 	private NodoPuestosAtencion cabezaPuesto;
 	private NodoPuestosAtencion colaPuesto;
