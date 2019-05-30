@@ -11,7 +11,7 @@ import Turnero.Turnero;
 
 class TestTurnero extends Turnero {
 	
-	@Test
+/*	@Test
 	void testInsertar() {
 		Metodos prueba = new Metodos();
 	//	Persona persona1 = new Persona("luis", 01);
@@ -43,23 +43,40 @@ class TestTurnero extends Turnero {
 		assertEquals(cola, "luis");
 		
 	}
+*/	
+
+	
+	@Test
+	void testInsertarTurno() {	// TEST DEL METODO OK
+				
+		Turnero prueba = new Turnero();
+
+		prueba.insertarTurno("carlos", 002, "servicio1", 0);
+		prueba.insertarTurno("alejo", 001, "servicio3", 1);
+				
+		assertEquals(prueba.getCabezaTurno().getCliente().getNombre(), "carlos");
+		assertEquals(prueba.getCabezaTurno().getSiguienteTurno().getCliente().getNombre(), "alejo");
+		assertEquals(prueba.getColaTurno().getCliente().getNombre(), "alejo");
+	}
 	
 	@Test
 	void testAsignarTurno() {	// TEST DEL METODO OK
 				
 		Turnero prueba = new Turnero();
-/*		NodoTurnero nodo = new NodoTurnero("carlos", 002, "servicio1", 0);
-		NodoTurnero nodo2 = new NodoTurnero("luis", 002, "servicio1", 1);
-		NodoTurnero nodo3 = new NodoTurnero("juan", 002, "servicio1", 0);
-		NodoTurnero nodo4 = new NodoTurnero("mario", 002, "servicio1", 1);
-	*/	
-		prueba.asignarTurno("carlos", 002, "servicio1", 0, prueba.getCabezaTurno());
-				
-		assertEquals(prueba.getCabezaTurno().getCliente().getNombre(), "luis");
 
+		prueba.asignarTurno("carlos", 002, "servicio1", 0, prueba.getCabezaTurno());
+		prueba.asignarTurno("alejo", 001, "servicio3", 1, prueba.getCabezaTurno());
+		prueba.asignarTurno("juan", 002, "servicio2", 0, prueba.getCabezaTurno());
+		prueba.asignarTurno("luis", 001, "servicio3", 1, prueba.getCabezaTurno());
+				
+		assertEquals(prueba.getCabezaTurno().getCliente().getNombre(), "alejo");
+		assertEquals(prueba.getCabezaTurno().getSiguienteTurno().getCliente().getNombre(), "luis");
+		assertEquals(prueba.getCabezaTurno().getSiguienteTurno().getSiguienteTurno().getCliente().getNombre(), "carlos");
+		assertEquals(prueba.getColaTurno().getCliente().getNombre(), "juan");
+		assertEquals(prueba.getTamañoTurno(), 4);
 	}
 	
-	@Test
+/*	@Test
 	void testInsertarEnServicio() {
 		Metodos prueba = new Metodos();
 		NodoTurnero nodo1 = new NodoTurnero("luis", 001, "servicio1", 0);
@@ -78,5 +95,5 @@ class TestTurnero extends Turnero {
 		assertEquals(prueba.getListaDeServicios().getColaServicio().getDatoServicio().getCabezaTurno().getCliente().getNombre(), "juan");
 	
 	}
-	
+	*/
 }

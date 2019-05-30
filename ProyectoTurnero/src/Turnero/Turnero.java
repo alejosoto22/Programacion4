@@ -59,61 +59,7 @@ public class Turnero {
 		this.tamañoTurno = this.tamañoTurno + 1;
 	}
 	
-/*	public void asignarTurno(String nombre, int id, String servicio, int prioridad, NodoTurnero nodoActual) { // nodoActual es la cabeza.
-		NodoTurnero nuevoNodo = new NodoTurnero(nombre, id, servicio, prioridad);
-		
-		if (this.cabezaTurno == null) {
-			this.cabezaTurno = nuevoNodo;
-			this.colaTurno = nuevoNodo;
-			this.tamañoTurno = 1;
-			this.cabezaTurno.setConsecutivoTurno(1);
-		} else {
-			if (nodoActual != null) {
-				if (nodoActual.getCliente().getPrioridad() == 0) {
 
-					if (nuevoNodo.getCliente().getPrioridad() == 1) {
-						nodoActual.setAnteriorTurno(nuevoNodo);
-						nuevoNodo.setSiguienteTurno(nodoActual);
-						if (nodoActual == this.cabezaTurno) {
-							this.cabezaTurno = nuevoNodo;	//////////// voy aqui
-							// System.out.println("entró al primero");
-						}
-					} else {
-						this.colaDeTurnosPorPrioridad.getColaTurno().setSiguienteTurno(nuevoNodo);
-						nuevoNodo.setAnteriorTurno(this.colaDeTurnosPorPrioridad.getColaTurno());
-						this.colaDeTurnosPorPrioridad.setColaTurno(nuevoNodo);
-						this.colaDeTurnosPorPrioridad.getColaTurno().setSiguienteTurno(null);
-					}
-				} else {
-					if (nodoActual.getCliente().getPrioridad() == 1) {
-						if (nodoActual.getSiguienteTurno() == null) {
-							nodoActual.setSiguienteTurno(nuevoNodo);
-							nuevoNodo.setAnteriorTurno(nodoActual);
-							this.colaDeTurnosPorPrioridad.setColaTurno(nuevoNodo);
-							this.colaDeTurnosPorPrioridad.getColaTurno().setSiguienteTurno(null);
-						} else {
-							if (nodoActual.getSiguienteTurno().getCliente().getPrioridad() == 1) {
-								insertarOrdenado(nuevoNodo, nodoActual.getSiguienteTurno());
-							} else {
-								if (nuevoNodo.getCliente().getPrioridad() == 1) {
-									nuevoNodo.setAnteriorTurno(nodoActual);
-									nuevoNodo.setSiguienteTurno(nodoActual.getSiguienteTurno());
-									nodoActual.setSiguienteTurno(nuevoNodo);
-									nuevoNodo.getSiguienteTurno().setAnteriorTurno(nuevoNodo);
-								} else {
-									this.colaDeTurnosPorPrioridad.getColaTurno().setSiguienteTurno(nuevoNodo);
-									nuevoNodo.setAnteriorTurno(this.colaDeTurnosPorPrioridad.getColaTurno());
-									this.colaDeTurnosPorPrioridad.setColaTurno(nuevoNodo);
-									this.colaDeTurnosPorPrioridad.getColaTurno().setSiguienteTurno(null);
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-	*/
 	// FALTAN LOS CONSECUTIVOS
 	public void asignarTurno(String nombre, int id, String servicio, int prioridad, NodoTurnero actual) {
 		NodoTurnero nuevoNodo = new NodoTurnero(nombre, id, servicio, prioridad);
@@ -168,6 +114,6 @@ public class Turnero {
 			}
 		}
 		this.tamañoTurno = this.tamañoTurno + 1;
-		
+		System.out.println("lista con " + this.tamañoTurno + " nodos.");
 	}
 }
