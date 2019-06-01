@@ -6,7 +6,9 @@ public class PuestosAtencion {
 	private NodoPuestosAtencion cabezaPuesto;
 	private NodoPuestosAtencion colaPuesto;
 	private int tamañoPuestos;
-	private String estadoPuesto;
+	private PuestosAtencion listaPuestos;
+	
+		
 	public NodoPuestosAtencion getCabezaPuesto() {
 		return cabezaPuesto;
 	}
@@ -25,12 +27,12 @@ public class PuestosAtencion {
 	public void setTamañoPuestos(int tamañoPuestos) {
 		this.tamañoPuestos = tamañoPuestos;
 	}
-	public String getEstadoPuesto() {
-		return estadoPuesto;
+	public PuestosAtencion getListaPuestos() {
+		return listaPuestos;
 	}
-	public void setEstadoPuesto(String estadoPuesto) {
-		this.estadoPuesto = estadoPuesto;
+	public void setListaPuestos(PuestosAtencion listaPuestos) {
+		this.listaPuestos = listaPuestos;
 	}
-	
+		
 
 }

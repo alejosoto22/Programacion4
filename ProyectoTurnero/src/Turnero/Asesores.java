@@ -5,6 +5,7 @@ public class Asesores {
 	private NodoAsesores cabezaAsesor = null;
 	private NodoAsesores colaAsesor = null;
 	private int tamañoAsesor = 0;
+	Asesores listaAsesores;
 	
 	public Asesores() {
 	}
@@ -26,6 +27,31 @@ public class Asesores {
 	}
 	public void setTamañoAsesor(int tamañoAsesor) {
 		this.tamañoAsesor = tamañoAsesor;
+	}
+	
+	public Asesores getListaAsesores() {
+		return listaAsesores;
+	}
+
+	public void setListaAsesores(Asesores listaAsesores) {
+		this.listaAsesores = listaAsesores;
+	}
+
+	public void crearAsesor(String nombre, int idAsesor, boolean estado, String primerServicio, String segundoServicio, String tercerServicio) {
+		NodoAsesores nuevoNodo = new NodoAsesores(nombre, idAsesor, estado, primerServicio, segundoServicio, tercerServicio);
+		
+		if (this.cabezaAsesor == null) {
+			this.cabezaAsesor = nuevoNodo;
+			this.colaAsesor = nuevoNodo;
+			this.cabezaAsesor.setConsecutivoAsesor(1);
+			this.colaAsesor.setConsecutivoAsesor(1);
+			
+		} else {this.colaAsesor.setSiguienteAsesor(nuevoNodo);
+				nuevoNodo.setAnteriorAsesor(this.colaAsesor);
+				this.colaAsesor = nuevoNodo;
+				this.colaAsesor.setConsecutivoAsesor(this.colaAsesor.getAnteriorAsesor().getConsecutivoAsesor() + 1);
+		}
+		this.tamañoAsesor = this.tamañoAsesor + 1;
 	}
 	
 }

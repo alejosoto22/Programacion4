@@ -4,7 +4,8 @@ public class NodoPuestosAtencion {
 	private NodoPuestosAtencion anteriorPuesto;
 	private NodoPuestosAtencion siguientePuesto;
 	private int cosecutivoPuesto = 0;
-	private NodoAsesores asesor;
+	private NodoAsesores datoPuesto;
+	private boolean estadoPuesto;
 	
 	public NodoPuestosAtencion() {
 	
@@ -27,13 +28,19 @@ public class NodoPuestosAtencion {
 	public void setCosecutivoPuesto(int cosecutivoPuesto) {
 		this.cosecutivoPuesto = cosecutivoPuesto;
 	}
-	public NodoAsesores getAsesor() {
-		return asesor;
-	}
-	public void setAsesor(NodoAsesores asesor) {
-		this.asesor = asesor;
-	}
 	
-	
+	public NodoAsesores getDatoPuesto() {
+		return datoPuesto;
+	}
+	public void setDatoPuesto(NodoAsesores datoPuesto) {
+		this.datoPuesto = datoPuesto;
+	}
+	public boolean isEstadoPuesto() {
+		return estadoPuesto;
+	}
+	public void setEstadoPuesto(boolean estadoPuesto) {
+		this.estadoPuesto = estadoPuesto;
+	}
+		
 
 }

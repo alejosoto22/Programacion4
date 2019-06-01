@@ -6,9 +6,11 @@ public class NodoAtendidos {
 	private NodoAtendidos anteriorAtendido;
 	private NodoAtendidos siguienteAtendido;
 	private NodoAsesores filaDeAtendidos;
+	private Persona asesorAtendidos;
+	private Turnero atendidos;
 	
-	public NodoAtendidos(NodoAsesores filaDeAtendidos) {
-		this.filaDeAtendidos = filaDeAtendidos;
+	public NodoAtendidos(String nombreAsesor, int idAsesor) {
+		this.asesorAtendidos = new Persona(nombreAsesor, idAsesor);
 	}
 	
 	public int getConsecutivoAtendido() {
@@ -34,6 +36,22 @@ public class NodoAtendidos {
 	}
 	public void setFilaDeAtendidos(NodoAsesores filaDeAtendidos) {
 		this.filaDeAtendidos = filaDeAtendidos;
+	}
+
+	public Persona getAsesorAtendidos() {
+		return asesorAtendidos;
+	}
+
+	public void setAsesorAtendidos(Persona asesorAtendidos) {
+		this.asesorAtendidos = asesorAtendidos;
+	}
+
+	public Turnero getAtendidos() {
+		return atendidos;
+	}
+
+	public void setAtendidos(Turnero atendidos) {
+		this.atendidos = atendidos;
 	}
 	
 }

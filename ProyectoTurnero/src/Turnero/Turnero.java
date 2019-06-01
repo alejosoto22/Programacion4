@@ -60,7 +60,7 @@ public class Turnero {
 	}
 	
 
-	// FALTAN LOS CONSECUTIVOS
+	// flc
 	public void asignarTurno(String nombre, int id, String servicio, int prioridad, NodoTurnero actual) {
 		NodoTurnero nuevoNodo = new NodoTurnero(nombre, id, servicio, prioridad);
 		NodoTurnero nodoActual = actual;
