@@ -18,6 +18,7 @@ public class VentanaConversor extends JFrame implements InterfazVista {
 	private JButton convertirAeuros;
 	private JTextField cantidad;
 	private JLabel resultado;
+	
 	public VentanaConversor () {
 	super("Conversor de Euros y Pesetas");
 	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

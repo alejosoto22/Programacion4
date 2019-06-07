@@ -1,0 +1,170 @@
+package Vista;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+//import Controlador.ControlConversor;
+import Controlador.Controlador;
+import Modelo.Turnero;
+
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import javax.swing.JTextArea;
+import javax.swing.JLabel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Vista extends JFrame implements InterfazVista{
+
+	private JPanel contentPane;
+	private JTextField txtNombre;
+	private JTextField txtId;
+	private JTextField txtServicio;
+	private JLabel TurnoAsignado;
+	Turnero listaDeTurnos = new Turnero();
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Vista frame = new Vista();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Vista() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JButton btnAceptar = new JButton("Aceptar");
+		btnAceptar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				String turno = "Su Turno es el " + listaDeTurnos.getTamañoTurno();
+				
+			}
+		});
+		btnAceptar.setBounds(5, 234, 424, 23);
+		contentPane.add(btnAceptar);
+		
+		txtNombre = new JTextField();
+		txtNombre.setText("Nombre");
+		txtNombre.setBounds(212, 58, 86, 20);
+		contentPane.add(txtNombre);
+		txtNombre.setColumns(10);
+		
+		txtId = new JTextField();
+		txtId.setText("Id");
+		txtId.setBounds(212, 89, 86, 20);
+		contentPane.add(txtId);
+		txtId.setColumns(10);
+		
+		txtServicio = new JTextField();
+		txtServicio.setText("Estado");
+		txtServicio.setBounds(212, 120, 86, 20);
+		contentPane.add(txtServicio);
+		txtServicio.setColumns(10);
+		
+		JTextArea txtrIngreseSuNombre = new JTextArea();
+		txtrIngreseSuNombre.setText("Ingrese Nombre:");
+		txtrIngreseSuNombre.setBounds(48, 56, 147, 22);
+		contentPane.add(txtrIngreseSuNombre);
+		
+		JTextArea txtrIngreseSuId = new JTextArea();
+		txtrIngreseSuId.setText("Ingrese Id:");
+		txtrIngreseSuId.setBounds(48, 87, 147, 22);
+		contentPane.add(txtrIngreseSuId);
+		
+		JTextArea txtrIngreseElServicio = new JTextArea();
+		txtrIngreseElServicio.setText("Ingrese Estado:");
+		txtrIngreseElServicio.setBounds(48, 118, 144, 22);
+		contentPane.add(txtrIngreseElServicio);
+		
+		JTextArea txtrAsignacinDeTurno = new JTextArea();
+		txtrAsignacinDeTurno.setText("Crear Asesor");
+		txtrAsignacinDeTurno.setBounds(180, 11, 100, 22);
+		contentPane.add(txtrAsignacinDeTurno);
+		
+		JTextArea textoTurnoAsignado = new JTextArea();
+		textoTurnoAsignado.setBounds(134, 201, 164, 22);
+		contentPane.add(textoTurnoAsignado);
+	}
+
+	public JLabel getTurnoAsignado() {
+		return TurnoAsignado;
+	}
+
+	public void setTurnoAsignado(JLabel turnoAsignado) {
+		TurnoAsignado = turnoAsignado;
+	}
+
+	public void setControlador(Controlador controlAsesor) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void arranca() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public String getNombreAsesor() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public int getIdAsesor() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public boolean getEstadoAsesor() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public void escribeAsesor(String s) {
+		// TODO Auto-generated method stub
+		
+	}
+	/*
+//	public void escribeCambio(String s) {
+//		resultado.setText(s);
+//		}
+		public double getCantidad() {
+		try {
+		return Double.parseDouble(cantidad.getText());
+		}
+		catch (NumberFormatException e) {
+		return 0.0D;
+		}
+		}
+		public void setControlador(ControlConversor c) {
+		convertirApesetas.addActionListener(c);
+		convertirAeuros.addActionListener(c);
+		}
+		public void arranca() {
+		pack();// coloca los componentes
+		setLocationRelativeTo(null);// centra la ventana en la pantalla
+		setVisible(true);// visualiza la ventana
+		}
+	*/
+}

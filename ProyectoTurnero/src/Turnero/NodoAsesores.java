@@ -13,12 +13,12 @@ public class NodoAsesores {
 		
 	}
 	
-	 public NodoAsesores(String nombre, int idAsesor, boolean estado, String primerServicio, String segundoServicio, String tercerServicio) {
-		this.asesor = new Persona(nombre, idAsesor);
-		this.asesor.setEstadoAsesor(estado);
-		this.asesor.setServicioAsesor1(primerServicio);
-		this.asesor.setServicioAsesor2(segundoServicio);
-		this.asesor.setServicioAsesor3(tercerServicio);
+	 public NodoAsesores(String nombreAsesor, int idAsesor, boolean estadoAsesor) {
+		this.asesor = new Persona(nombreAsesor, idAsesor);
+		this.asesor.setEstadoAsesor(estadoAsesor);
+	//	this.asesor.setServicioAsesor1(primerServicio);
+	//	this.asesor.setServicioAsesor2(segundoServicio);
+	//	this.asesor.setServicioAsesor3(tercerServicio);
 		
 	 }
 	
