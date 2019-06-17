@@ -2,7 +2,8 @@ package Controlador;
 
 import Modelo.Asesores;
 import Vista.InterfazVista;
-import Vista.Vista;
+import Vista.VistaAsesores;
+
 
 public class ProgramaAsesores {
 
@@ -10,7 +11,7 @@ public class ProgramaAsesores {
 		
 		Asesores modelo = new Asesores();
 		
-		InterfazVista vista = new Vista();
+		InterfazVista vista = new VistaAsesores();
 		
 		Controlador control = new Controlador(vista, modelo);
 		

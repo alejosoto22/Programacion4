@@ -4,10 +4,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import Turnero.Metodos;
-import Turnero.NodoTurnero;
-import Turnero.Persona;
-import Turnero.Turnero;
+import Modelo.Metodos;
+import Modelo.NodoTurnero;
+import Modelo.Persona;
+import Modelo.Turnero;
 
 class TestTurnero extends Turnero {
 	

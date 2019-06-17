@@ -1,4 +1,4 @@
-package Turnero; // Dejarás - Kjarkas
+package Modelo; // Dejarás - Kjarkas
 
 public class Metodos {
 

@@ -1,4 +1,4 @@
-package Turnero;
+package Modelo;
 
 public class NodoPuestosAtencion {
 	private NodoPuestosAtencion anteriorPuesto;

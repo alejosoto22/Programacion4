@@ -1,4 +1,4 @@
-package Turnero;
+package Modelo;
 
 public class PuestosAtencion {
 	// Clase donde se atiende a las personas.
