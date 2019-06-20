@@ -6,7 +6,7 @@ public class NodoAsesores {
 	private int consecutivoAsesor = 0;
 	private NodoAsesores anteriorAsesor;
 	private NodoAsesores siguienteAsesor;
-	private Turnero datoAsesor;
+	private NodoTurnero datoAsesor;
 	
 		
 	public NodoAsesores() {
@@ -16,20 +16,17 @@ public class NodoAsesores {
 	 public NodoAsesores(String nombreAsesor, int idAsesor, boolean estadoAsesor) {
 		this.asesor = new Persona(nombreAsesor, idAsesor);
 		this.asesor.setEstadoAsesor(estadoAsesor);
-	//	this.asesor.setServicioAsesor1(primerServicio);
-	//	this.asesor.setServicioAsesor2(segundoServicio);
-	//	this.asesor.setServicioAsesor3(tercerServicio);
-		
+			
 	 }
-	
-	public Turnero getDatoAsesor() {
+		
+	public NodoTurnero getDatoAsesor() {
 		return datoAsesor;
 	}
 
-	public void setDatoAsesor(Turnero datoAsesor) {
+	public void setDatoAsesor(NodoTurnero datoAsesor) {
 		this.datoAsesor = datoAsesor;
 	}
-	
+
 	public Persona getAsesor() {
 		return asesor;
 	}
@@ -56,6 +53,7 @@ public class NodoAsesores {
 	public void setSiguienteAsesor(NodoAsesores siguienteAsesor) {
 		this.siguienteAsesor = siguienteAsesor;
 	}
+
 	
 	
 }

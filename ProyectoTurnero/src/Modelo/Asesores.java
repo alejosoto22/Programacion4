@@ -36,23 +36,6 @@ public class Asesores {
 	public void setListaAsesores(Asesores listaAsesores) {
 		this.listaAsesores = listaAsesores;
 	}
-
-/*	public void crearAsesor(String nombre, int idAsesor, boolean estado, String primerServicio, String segundoServicio, String tercerServicio) {
-		NodoAsesores nuevoNodo = new NodoAsesores(nombre, idAsesor, estado, primerServicio, segundoServicio, tercerServicio);
-		
-		if (this.cabezaAsesor == null) {
-			this.cabezaAsesor = nuevoNodo;
-			this.colaAsesor = nuevoNodo;
-			this.cabezaAsesor.setConsecutivoAsesor(1);
-			this.colaAsesor.setConsecutivoAsesor(1);
-			
-		} else {this.colaAsesor.setSiguienteAsesor(nuevoNodo);
-				nuevoNodo.setAnteriorAsesor(this.colaAsesor);
-				this.colaAsesor = nuevoNodo;
-				this.colaAsesor.setConsecutivoAsesor(this.colaAsesor.getAnteriorAsesor().getConsecutivoAsesor() + 1);
-		}
-		this.tamañoAsesor = this.tamañoAsesor + 1;
-	}*/
 	
 	public void crearAsesor(String nombreAsesor, int idAsesor, boolean estadoAsesor) {
 		NodoAsesores nuevoNodo = new NodoAsesores(nombreAsesor, idAsesor, estadoAsesor);
@@ -69,6 +52,23 @@ public class Asesores {
 				this.colaAsesor.setConsecutivoAsesor(this.colaAsesor.getAnteriorAsesor().getConsecutivoAsesor() + 1);
 		}
 		this.tamañoAsesor = this.tamañoAsesor + 1;
+		System.out.println("Se a creado el asesor " + nombreAsesor + " con Id " + idAsesor);
 	}
 	
+	/*	public void crearAsesor(String nombre, int idAsesor, boolean estado, String primerServicio, String segundoServicio, String tercerServicio) {
+	NodoAsesores nuevoNodo = new NodoAsesores(nombre, idAsesor, estado, primerServicio, segundoServicio, tercerServicio);
+	
+	if (this.cabezaAsesor == null) {
+		this.cabezaAsesor = nuevoNodo;
+		this.colaAsesor = nuevoNodo;
+		this.cabezaAsesor.setConsecutivoAsesor(1);
+		this.colaAsesor.setConsecutivoAsesor(1);
+		
+	} else {this.colaAsesor.setSiguienteAsesor(nuevoNodo);
+			nuevoNodo.setAnteriorAsesor(this.colaAsesor);
+			this.colaAsesor = nuevoNodo;
+			this.colaAsesor.setConsecutivoAsesor(this.colaAsesor.getAnteriorAsesor().getConsecutivoAsesor() + 1);
+	}
+	this.tamañoAsesor = this.tamañoAsesor + 1;
+}*/
 }
