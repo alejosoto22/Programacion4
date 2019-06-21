@@ -1,11 +1,27 @@
 package Modelo;
 
-public class NodoPuestosAtencion {
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "TablaPuestoAtencion")
+public class NodoPuestosAtencion implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
+	
 	private NodoPuestosAtencion anteriorPuesto;
 	private NodoPuestosAtencion siguientePuesto;
 	private int cosecutivoPuesto = 0;
 	private NodoAsesores datoPuesto;
 	private boolean estadoPuesto;
+	
+	@Id
+	@Column(name = "ColmPuestoAtencion")
+	private int puestoAtencion;
 	
 	public NodoPuestosAtencion() {
 	
@@ -40,6 +56,12 @@ public class NodoPuestosAtencion {
 	}
 	public void setEstadoPuesto(boolean estadoPuesto) {
 		this.estadoPuesto = estadoPuesto;
+	}
+	public int getPuestoAtencion() {
+		return puestoAtencion;
+	}
+	public void setPuestoAtencion(int puestoAtencion) {
+		this.puestoAtencion = puestoAtencion;
 	}
 		
 

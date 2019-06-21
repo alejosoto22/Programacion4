@@ -9,6 +9,10 @@
   
   <class>
   Modelo.Persona
+  Modelo.NodoServicios
+  Modelo.NodoAsesores
+  Modelo.NodoPuestosAtencion
+  Modelo.NodoAtendidos
   </class>
   
     <properties>

@@ -1,6 +1,17 @@
 package Modelo;
 
-public class NodoAtendidos {
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "TablaAtendidos")
+public class NodoAtendidos implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
 	
 	private int consecutivoAtendido = 0;
 	private NodoAtendidos anteriorAtendido;
@@ -8,6 +19,10 @@ public class NodoAtendidos {
 	private NodoAsesores filaDeAtendidos;
 	private Persona asesorAtendidos;
 	private Turnero atendidos;
+	
+	@Id
+	@Column(name = "ColmAtendidos")
+	private int atendido;
 	
 	public NodoAtendidos(String nombreAsesor, int idAsesor) {
 		this.asesorAtendidos = new Persona(nombreAsesor, idAsesor);
@@ -52,6 +67,14 @@ public class NodoAtendidos {
 
 	public void setAtendidos(Turnero atendidos) {
 		this.atendidos = atendidos;
+	}
+
+	public int getAtendido() {
+		return atendido;
+	}
+
+	public void setAtendido(int atendido) {
+		this.atendido = atendido;
 	}
 	
 }
