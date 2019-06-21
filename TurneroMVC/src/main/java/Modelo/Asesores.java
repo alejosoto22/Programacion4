@@ -72,4 +72,21 @@ public class Asesores {
 		System.out.println("Se a creado el asesor " + nombreAsesor + " con Id " + idAsesor);
 	}
 	
+	
+	
+	public String listarAserores() {
+		String result;
+		String print = "";
+		NodoAsesores tmp = this.cabezaAsesor;
+		int i = 1;
+		while(i <= this.tamañoAsesor) {
+			result = tmp.getAsesor().getNombre() + ". " + tmp.getAsesor().getId();
+			print = print + result + " - ";
+			tmp = tmp.getSiguienteAsesor();
+			i = i + 1;
+		}
+		return print;
+	}
+	 
+	
 }

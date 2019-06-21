@@ -1,8 +1,7 @@
 package Modelo;
 
-
 public class Turnero{
-	
+	//
 	private NodoTurnero cabezaTurno = null;
 	private NodoTurnero colaTurno = null;
 	private int tamañoTurno = 0;

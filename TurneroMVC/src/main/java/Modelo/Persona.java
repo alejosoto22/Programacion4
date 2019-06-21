@@ -1,9 +1,25 @@
 package Modelo;
 
-public class Persona {
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "TablaPersona")
+public class Persona implements Serializable{
 	
+	private static final long serialVersionUID = 1L;
+	
+	@Column(name = "ColmNombre")
 	private String nombre;
+	
+	@Id
+	@Column(name = "ColmId")
 	private int id;
+		
 	private String servicio;
 	private int prioridad;
 	
@@ -11,7 +27,11 @@ public class Persona {
 	private String servicioAsesor2;
 	private String servicioAsesor3;
 	private boolean estadoAsesor;
-	
+			
+	public Persona() {
+		super();
+	}
+
 	public Persona(String nombre, int id) {
 
 		this.nombre = nombre;

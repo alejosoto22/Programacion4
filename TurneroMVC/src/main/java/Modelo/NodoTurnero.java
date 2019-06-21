@@ -1,7 +1,6 @@
 package Modelo;
 
 
-
 public class NodoTurnero{
 	
 	private Persona cliente;
@@ -9,9 +8,9 @@ public class NodoTurnero{
 	private NodoTurnero anteriorTurno = null;
 	private NodoTurnero siguienteTurno = null;
 		
-//	public NodoTurnero() {
+	public NodoTurnero() {
 		
-//	}
+	}
 	
 	public NodoTurnero(String nombre, int id, String servicio, int prioridad) {
 		this.cliente = new Persona(nombre, id);

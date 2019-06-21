@@ -12,6 +12,7 @@ public class Controlador implements ActionListener{
 	private Asesores modelo;
 			
 	public Controlador(InterfazVista vista, Asesores modelo) {
+		
 		this.vista = vista;
 		this.modelo = modelo;
 	}
@@ -22,7 +23,8 @@ public class Controlador implements ActionListener{
 		boolean estadoAsesor = vista.getEstadoAsesor();
 		
 		modelo.crearAsesor(nombreAsesor, idAsesor, estadoAsesor);
-		vista.escribeAsesor("Asesor creado");
+		modelo.listarAserores();
+//		vista.escribeAsesor("Asesor creado");
 	}
 
 }

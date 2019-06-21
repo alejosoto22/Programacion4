@@ -18,6 +18,7 @@ import java.awt.Font;
 import javax.swing.JList;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Window.Type;
 
 public class VistaAsesores extends JFrame implements InterfazVista{
 
@@ -25,8 +26,9 @@ public class VistaAsesores extends JFrame implements InterfazVista{
 	private JTextField txtNombre;
 	private JTextField txtIdentificacin;
 	private JTextField txtEstado;
-	Asesores listaAsesores = new Asesores();
-	String nombreAsesor;
+	private JButton btnRegistrar;
+//	Asesores listaAsesores = new Asesores();
+//	String nombreAsesor;
 	/**
 	 * Launch the application.
 	 */
@@ -54,13 +56,14 @@ public class VistaAsesores extends JFrame implements InterfazVista{
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnRegistrar = new JButton("Registrar");
-		btnRegistrar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				listaAsesores.crearAsesor(txtNombre.getText(), Integer.parseInt(txtIdentificacin.getText()), Boolean.parseBoolean(txtEstado.getText()));
-				System.out.println("Actualmente la lista tiene " + listaAsesores.getTamañoAsesor() + " asesores.");
+		btnRegistrar = new JButton("Registrar");
+/*		btnRegistrar.addActionListener(new ActionListener() {
+			public void actionPerformed(Controlador arg0) {
+				btnRegistrar.addActionListener(controlador);
+			//	listaAsesores.crearAsesor(txtNombre.getText(), Integer.parseInt(txtIdentificacin.getText()), Boolean.parseBoolean(txtEstado.getText()));
+	//			System.out.println("Actualmente la lista tiene " + listaAsesores.getTamañoAsesor() + " asesores.");
 			}
-		});
+		});*/
 		btnRegistrar.setBounds(169, 194, 89, 23);
 		contentPane.add(btnRegistrar);
 		
@@ -101,34 +104,37 @@ public class VistaAsesores extends JFrame implements InterfazVista{
 	}
 
 	public void setControlador(Controlador controlAsesor) {
+		btnRegistrar.addActionListener(controlAsesor);
 		// TODO Auto-generated method stub
 				
 	}
 
 	public void arranca() {
-		// TODO Auto-generated method stub
 		
+		pack();// coloca los componentes
+		setLocationRelativeTo(null);// centra la ventana en la pantalla
+		setVisible(true);// visualiza la ventana
+	
 	}
 
 	public String getNombreAsesor() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return txtNombre.getText();
+		
 	}
 
 	public int getIdAsesor() {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return Integer.parseInt(txtIdentificacin.getText());
 	}
 
 	public boolean getEstadoAsesor() {
-		// TODO Auto-generated method stub
-		return false;
+		
+		return Boolean.parseBoolean(txtEstado.getText());
 	}
 
 	public void escribeAsesor(String s) {
-		// TODO Auto-generated method stub
+		
 		
 	}
-	
-
 }

@@ -12,10 +12,6 @@ import javax.persistence.Table;
 @Table(name = "PERSONA")
 public class Persona implements Serializable{
 	
-	/**
-	 * 
-	 */
-	
 	private static final long serialVersionUID = 1L;
 	@Column(name = "NOMBRE")
 	private String nombre;

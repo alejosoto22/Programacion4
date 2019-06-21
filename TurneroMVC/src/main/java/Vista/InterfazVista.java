@@ -10,7 +10,7 @@ public interface InterfazVista {
 	String getNombreAsesor(); // Datos que recibe el metodo de crearAsesor.
 	int getIdAsesor();		  // Datos que recibe el metodo de crearAsesor.
 	boolean getEstadoAsesor();// Datos que recibe el metodo de crearAsesor.
-	void escribeAsesor(String s);	// Texto con los asesores.
+//	void escribeAsesor(String s);	// Texto con los asesores.
 	
 	// Constantes que definen las posibles operaciones:
 

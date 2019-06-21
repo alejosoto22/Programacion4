@@ -1,6 +1,13 @@
 package Modelo;
 
-public class NodoAsesores {
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Id;
+
+public class NodoAsesores implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
 	
 	private Persona asesor;
 	private int consecutivoAsesor = 0;
@@ -8,12 +15,21 @@ public class NodoAsesores {
 	private NodoAsesores siguienteAsesor;
 	private Turnero datoAsesor;
 	
+	@Column(name = "ColmNombreAsesor")
+	private String nombreAsesor;
+	
+	@Id
+	@Column(name = "ColmIdAsesor")
+	private int idAsesor;
+	
+	@Column(name = "ColmEstadoAsesor")
+	private boolean estadoAsesor;
 		
 	public NodoAsesores() {
-		
+		super();
 	}
-	
-	 public NodoAsesores(String nombreAsesor, int idAsesor, boolean estadoAsesor) {
+
+	public NodoAsesores(String nombreAsesor, int idAsesor, boolean estadoAsesor) {
 		this.asesor = new Persona(nombreAsesor, idAsesor);
 		this.asesor.setEstadoAsesor(estadoAsesor);
 	//	this.asesor.setServicioAsesor1(primerServicio);
