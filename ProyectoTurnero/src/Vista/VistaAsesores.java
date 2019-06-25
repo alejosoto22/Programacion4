@@ -25,6 +25,8 @@ public class VistaAsesores extends JFrame implements InterfazVista{
 	private JTextField textIdAsesor;
 	private JTextField textEstadoAsesor;
 	private JButton btnCrearAsesor;
+	private JTextField textNombreServicio;
+	private JButton btnCrearServicio;
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -45,7 +47,7 @@ public class VistaAsesores extends JFrame implements InterfazVista{
 	public VistaAsesores() {
 		setFont(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 339, 259);
+		setBounds(100, 100, 659, 259);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -94,6 +96,26 @@ public class VistaAsesores extends JFrame implements InterfazVista{
 		textEstadoAsesor.setColumns(10);
 		textEstadoAsesor.setBounds(133, 120, 128, 20);
 		contentPane.add(textEstadoAsesor);
+		
+		JLabel label = new JLabel("REGISTRAR SERVICIOS");
+		label.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		label.setBounds(409, 31, 127, 15);
+		contentPane.add(label);
+		
+		textNombreServicio = new JTextField();
+		textNombreServicio.setColumns(10);
+		textNombreServicio.setBounds(430, 83, 128, 20);
+		contentPane.add(textNombreServicio);
+		
+		JLabel label_1 = new JLabel("Nombre:");
+		label_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		label_1.setBounds(373, 85, 47, 15);
+		contentPane.add(label_1);
+		
+		btnCrearServicio = new JButton("CREAR SERVICIO");
+		btnCrearServicio.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		btnCrearServicio.setBounds(421, 136, 115, 21);
+		contentPane.add(btnCrearServicio);
 	}
 	
 //	public void setControlador(Controlador controlAsesor) {
@@ -103,6 +125,11 @@ public class VistaAsesores extends JFrame implements InterfazVista{
 	
 	public void setControladorAsesor(ControladorAsesores controlAsesor) {
 		btnCrearAsesor.addActionListener(controlAsesor);
+		
+	}
+	
+	public void setControladorServicio(ControladorAsesores controlServicio) {
+		btnCrearServicio.addActionListener(controlServicio);
 		
 	}
 		
@@ -127,5 +154,12 @@ public class VistaAsesores extends JFrame implements InterfazVista{
 		// TODO Auto-generated method stub
 		return Boolean.parseBoolean(textEstadoAsesor.getText());
 	}
+
+	
+	public String getNombreServicio() {
+		// TODO Auto-generated method stub
+		return textNombreServicio.getText();
+	}
+
 	
 }

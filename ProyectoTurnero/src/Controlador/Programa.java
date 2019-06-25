@@ -3,9 +3,8 @@ package Controlador;
 import Modelo.Asesores;
 import Modelo.Servicios;
 import Vista.InterfazVista;
-import Vista.InterfazVistaServicios;
 import Vista.VistaAsesores;
-import Vista.VistaServicios;
+
 import Controlador.ControladorAsesores;
 
 public class Programa {
@@ -16,13 +15,16 @@ public class Programa {
 		Servicios modeloServicios = new Servicios();
 		
 		InterfazVista vista = new VistaAsesores();
-		InterfazVistaServicios vistaServicios = new VistaServicios();
+//		InterfazVista vistaServicios = (InterfazVista) new VistaServicios();
+//		InterfazVistaServicios vistaServicios = new VistaServicios();
 		
-		ControladorAsesores controlAsesores = new ControladorAsesores(vista, modeloAsesores);
-		ControladorServicios controlServicios = new ControladorServicios(vistaServicios, modeloServicios);
+		ControladorAsesores controlAsesores = new ControladorAsesores(vista, modeloAsesores, modeloServicios);
+		ControladorAsesores controlServicios = new ControladorAsesores(vista, modeloAsesores, modeloServicios);
+//		ControladorServicios controlServicios = new ControladorServicios(vistaServicios, modeloServicios);
 		
 		vista.setControladorAsesor(controlAsesores);
-		vistaServicios.setControladorServicio(controlServicios);
+		vista.setControladorAsesor(controlServicios);
+//		vistaServicios.setControladorServicio(controlServicios);
 		
 		vista.arranca();
 
