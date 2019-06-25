@@ -67,7 +67,9 @@ public class Turnero {
 		if (this.cabezaTurno == null) {
 			this.cabezaTurno = nuevoNodo;
 			this.colaTurno = nuevoNodo;
-			System.out.println("entró al nulo");
+			this.cabezaTurno.setConsecutivoTurno(1);
+			this.colaTurno.setConsecutivoTurno(1);
+	//		System.out.println("entró al nulo");
 		} else {
 			if (nodoActual != null) {
 				if (nodoActual.getCliente().getPrioridad() == 0) {

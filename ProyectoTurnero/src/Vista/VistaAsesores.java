@@ -7,22 +7,25 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import Controlador.Controlador;
+import Controlador.ControladorAsesores;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
+import java.awt.Dimension;
+import javax.swing.JSeparator;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class VistaAsesores extends JFrame implements InterfazVista{
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-
-	/**
-	 * Launch the application.
-	 */
+	private JTextField textNombreAsesor;
+	private JTextField textIdAsesor;
+	private JTextField textEstadoAsesor;
+	private JButton btnCrearAsesor;
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -40,85 +43,89 @@ public class VistaAsesores extends JFrame implements InterfazVista{
 	 * Create the frame.
 	 */
 	public VistaAsesores() {
+		setFont(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 339, 259);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnCrearAsesor = new JButton("Crear Asesor");
-		btnCrearAsesor.setBounds(174, 186, 95, 23);
+		btnCrearAsesor = new JButton("CREAR ASESOR");
+		btnCrearAsesor.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnCrearAsesor.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		btnCrearAsesor.setBounds(92, 148, 109, 23);
 		contentPane.add(btnCrearAsesor);
 		
 		JLabel lblRegistrarAsesor = new JLabel("REGISTRAR ASESOR");
 		lblRegistrarAsesor.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblRegistrarAsesor.setBounds(157, 29, 112, 15);
+		lblRegistrarAsesor.setBounds(104, 31, 112, 15);
 		contentPane.add(lblRegistrarAsesor);
 		
 		JLabel lblNombre = new JLabel("Nombre:");
 		lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblNombre.setBounds(86, 76, 47, 15);
+		lblNombre.setBounds(45, 70, 47, 15);
 		contentPane.add(lblNombre);
 		
-		JLabel lblIdentificacin = new JLabel("Identificaci\u00F3n:");
-		lblIdentificacin.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblIdentificacin.setBounds(86, 102, 76, 15);
-		contentPane.add(lblIdentificacin);
+		JLabel lblIdentificacion = new JLabel("Identificaci\u00F3n:");
+		lblIdentificacion.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblIdentificacion.setBounds(45, 96, 76, 15);
+		contentPane.add(lblIdentificacion);
 		
 		JLabel lblEstado = new JLabel("Estado:");
 		lblEstado.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblEstado.setBounds(86, 128, 47, 15);
+		lblEstado.setBounds(45, 122, 47, 15);
 		contentPane.add(lblEstado);
 		
-		textField = new JTextField();
-		textField.setBounds(174, 74, 128, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		textNombreAsesor = new JTextField();
+		textNombreAsesor.setBounds(133, 68, 128, 20);
+		contentPane.add(textNombreAsesor);
+		textNombreAsesor.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(174, 100, 128, 20);
-		contentPane.add(textField_1);
+		textIdAsesor = new JTextField();
+		textIdAsesor.setColumns(10);
+		textIdAsesor.setBounds(133, 94, 128, 20);
+		contentPane.add(textIdAsesor);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(174, 126, 47, 20);
-		contentPane.add(comboBox);
+		textEstadoAsesor = new JTextField();
+		textEstadoAsesor.setColumns(10);
+		textEstadoAsesor.setBounds(133, 120, 128, 20);
+		contentPane.add(textEstadoAsesor);
 	}
-
-	@Override
-	public void setControlador(Controlador controlAsesor) {
-		// TODO Auto-generated method stub
+	
+//	public void setControlador(Controlador controlAsesor) {
+//		btnCrearAsesor.addActionListener(controlAsesor);
+				
+//	}
+	
+	public void setControladorAsesor(ControladorAsesores controlAsesor) {
+		btnCrearAsesor.addActionListener(controlAsesor);
 		
 	}
-
-	@Override
+		
 	public void arranca() {
-		// TODO Auto-generated method stub
-		
+		pack();// coloca los componentes
+		setLocationRelativeTo(null);// centra la ventana en la pantalla
+		setVisible(true);// visualiza la ventana
+				
 	}
-
-	@Override
+	
 	public String getNombreAsesor() {
 		// TODO Auto-generated method stub
-		return null;
+		return textNombreAsesor.getText();
 	}
-
-	@Override
+	
 	public int getIdAsesor() {
 		// TODO Auto-generated method stub
-		return 0;
+		return Integer.parseInt(textIdAsesor.getText());
 	}
-
-	@Override
+	
 	public boolean getEstadoAsesor() {
 		// TODO Auto-generated method stub
-		return false;
+		return Boolean.parseBoolean(textEstadoAsesor.getText());
 	}
-
-	@Override
-	public void escribeAsesor(String s) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 }

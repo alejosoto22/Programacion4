@@ -9,15 +9,12 @@
   
   <class>
   Modelo.Persona
-  Modelo.NodoServicios
-  Modelo.NodoAsesores
-  Modelo.NodoPuestosAtencion
-  Modelo.NodoAtendidos
-  </class>
+  
+ </class>
   
     <properties>
         <property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
-        <property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:test" />
+        <property name="javax.persistence.jdbc.url" value="jdbc:h2:D:\UTP\Semestre 6\Programacion4\Programacion4\TurneroMVC\Archivos\ArchivoPrueba" />
         <property name="javax.persistence.jdbc.user" value="sa" />
         <property name="javax.persistence.jdbc.password" value="" />
         

@@ -17,15 +17,15 @@ public class TestTurnero {
 	Turnero prueba = new Turnero();
 	
 	prueba.insertarTurno("carlos", 002, "servicio1", 0);
-	prueba.insertarTurno("alejo", 001, "servicio3", 1);
+//	prueba.insertarTurno("alejo", 001, "servicio3", 1);
 			
 	assertEquals(prueba.getCabezaTurno().getCliente().getNombre(), "carlos");
-	assertEquals(prueba.getCabezaTurno().getSiguienteTurno().getCliente().getNombre(), "alejo");
+//	assertEquals(prueba.getCabezaTurno().getSiguienteTurno().getCliente().getNombre(), "alejo");
 	assertEquals(prueba.getColaTurno().getCliente().getNombre(), "alejo");
 		
 	}
 	
-	@Test
+/*	@Test
 	void testAsignarTurno() {	// TEST DEL METODO OK
 				
 		Turnero prueba = new Turnero();
@@ -40,5 +40,6 @@ public class TestTurnero {
 //		assertEquals(prueba.getCabezaTurno().getSiguienteTurno().getSiguienteTurno().getCliente().getNombre(), "carlos");
 //		assertEquals(prueba.getColaTurno().getCliente().getNombre(), "juan");
 //		assertEquals(prueba.getTamañoTurno(), 4);
-	}
+	}*/
+	
 }

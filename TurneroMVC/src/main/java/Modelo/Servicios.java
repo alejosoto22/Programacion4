@@ -2,7 +2,7 @@ package Modelo;
 
 public class Servicios {
 	
-	private NodoServicios cabezaServicio = null;
+/*	private NodoServicios cabezaServicio = null;
 	private NodoServicios colaServicio = null;
 	private int tamañoServicio = 0;
 	private Servicios listaDeServicios;
@@ -84,5 +84,5 @@ public class Servicios {
 
 		}
 	}
-	
+*/	
 }

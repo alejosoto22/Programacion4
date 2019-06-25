@@ -37,6 +37,20 @@ public class Servicios {
 		this.tamañoServicio = tamañoServicio;
 	}
 	
+	public void crearServicio(String nombre) {
+		NodoServicios nuevoNodo = new NodoServicios(nombre);
+		if(this.cabezaServicio == null) {
+			this.cabezaServicio = nuevoNodo;
+			this.colaServicio = nuevoNodo;
+		}else { this.colaServicio.setSiguienteServicio(nuevoNodo);
+				nuevoNodo.setAnteriorServicio(this.colaServicio);
+				this.colaServicio = nuevoNodo;
+		}
+		this.tamañoServicio = this.tamañoServicio + 1;
+		System.out.println("Se ha creado el servicio " + nombre);
+		System.out.println("La lista tiene " + this.tamañoServicio + " servicios.");
+	}
+	
 	public void insertarEnServicio(NodoTurnero nodo, NodoServicios actual) {
 		if (this.listaDeServicios.getCabezaServicio() == null) {
 			NodoServicios nuevoServicio = new NodoServicios();

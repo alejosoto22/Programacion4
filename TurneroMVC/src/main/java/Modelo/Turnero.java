@@ -1,11 +1,11 @@
 package Modelo;
 
 public class Turnero{
-	//
+	
 	private NodoTurnero cabezaTurno = null;
 	private NodoTurnero colaTurno = null;
 	private int tamañoTurno = 0;
-	private Turnero listaDeTurnos = null;
+	private Turnero listaDeTurnos = new Turnero();
 		
 	public Turnero() {
 	}
@@ -67,17 +67,18 @@ public class Turnero{
 		if (this.cabezaTurno == null) {
 			this.cabezaTurno = nuevoNodo;
 			this.colaTurno = nuevoNodo;
-			System.out.println("entró al nulo");
+		//	this.cabezaTurno.setConsecutivoTurno(1);
+		//	this.colaTurno.setConsecutivoTurno(1);
+			System.out.println("La lista estaba vacía");
 		} else {
 			if (nodoActual != null) {
 				if (nodoActual.getCliente().getPrioridad() == 0) {
-
 					if (nuevoNodo.getCliente().getPrioridad() == 1) {
 						nodoActual.setAnteriorTurno(nuevoNodo);
 						nuevoNodo.setSiguienteTurno(nodoActual);
 						if (nodoActual == this.cabezaTurno) {
 							this.cabezaTurno = nuevoNodo;
-							// System.out.println("entró al primero");
+							System.out.println("entró al primero");
 						}
 					} else {
 						this.colaTurno.setSiguienteTurno(nuevoNodo);

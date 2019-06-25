@@ -1,6 +1,10 @@
 package Modelo;
 
-public class Asesores {
+import java.io.Serializable;
+
+public class Asesores extends NodoAsesores implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
 	
 	private NodoAsesores cabezaAsesor = null;
 	private NodoAsesores colaAsesor = null;

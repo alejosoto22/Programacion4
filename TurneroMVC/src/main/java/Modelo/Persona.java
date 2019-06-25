@@ -19,8 +19,11 @@ public class Persona implements Serializable{
 	@Id
 	@Column(name = "ColmId")
 	private int id;
-		
+	
+	@Column(name = "ColmServicio")
 	private String servicio;
+	
+	@Column(name = "ColmPrioridad")
 	private int prioridad;
 	
 	private String servicioAsesor1;
@@ -102,5 +105,11 @@ public class Persona implements Serializable{
 	public void setEstadoAsesor(boolean estadoAsesor) {
 		this.estadoAsesor = estadoAsesor;
 	}
+
+	@Override
+	public String toString() {
+		return "Persona [nombre=" + nombre + ", id=" + id + "]";
+	}
+		
 
 }
