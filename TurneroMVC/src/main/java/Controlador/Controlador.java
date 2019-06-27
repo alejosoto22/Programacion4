@@ -15,8 +15,8 @@ import Vista.InterfazVista;
 
 public class Controlador implements ActionListener{
 	
-	private static EntityManager manager;
-	private static EntityManagerFactory emf;
+//	private static EntityManager manager;
+//	private static EntityManagerFactory emf;
 	
 	private InterfazVista vista;
 	private Asesores modelo;
@@ -43,7 +43,10 @@ public Controlador(InterfazVista vista, Servicios modeloServicios) {
 		int idAsesor = vista.getIdAsesor();
 		boolean estadoAsesor = vista.getEstadoAsesor();
 		
+		String nombreServicio = vista.getNombreServicio();
+		
 		modelo.crearAsesor(nombreAsesor, idAsesor, estadoAsesor);
+		modeloServicios.crearServicio(nombreServicio);
 //		modelo.listarAserores();
 		
 //		manager.getTransaction().begin();
@@ -53,13 +56,10 @@ public Controlador(InterfazVista vista, Servicios modeloServicios) {
 //		vista.escribeAsesor("Asesor creado");
 	}
 	
-/*	@SuppressWarnings("unchecked")
-	private static void imprimirTodo() {
-		List<Persona> personas = (List<Persona>) manager.createQuery("FROM Persona").getResultList();
-		System.out.println("En esta Base de Datos hay " + personas.size() + " personas.");
-		for(Persona person : personas) {
-			System.out.println(person.toString());
-		}
+public void actionPerformed2(ActionEvent evento2) {
+				
+		String nombreServicio = vista.getNombreServicio();
+				
+		modeloServicios.crearServicio(nombreServicio);
 	}
-*/
 }

@@ -2,7 +2,7 @@ package Modelo;
 
 public class Servicios {
 	
-/*	private NodoServicios cabezaServicio = null;
+	private NodoServicios cabezaServicio = null;
 	private NodoServicios colaServicio = null;
 	private int tamañoServicio = 0;
 	private Servicios listaDeServicios;
@@ -40,6 +40,20 @@ public class Servicios {
 	}
 	public void setTamañoServicio(int tamañoServicio) {
 		this.tamañoServicio = tamañoServicio;
+	}
+	
+	public void crearServicio(String nombre) {
+		NodoServicios nuevoNodo = new NodoServicios(nombre);
+		if(this.cabezaServicio == null) {
+			this.cabezaServicio = nuevoNodo;
+			this.colaServicio = nuevoNodo;
+		}else { this.colaServicio.setSiguienteServicio(nuevoNodo);
+				nuevoNodo.setAnteriorServicio(this.colaServicio);
+				this.colaServicio = nuevoNodo;
+		}
+		this.tamañoServicio = this.tamañoServicio + 1;
+		System.out.println("Se ha creado el servicio " + nombre);
+		System.out.println("La lista tiene " + this.tamañoServicio + " servicios.");
 	}
 	
 	public void insertarEnServicio(NodoTurnero nodo, NodoServicios actual) {
@@ -84,5 +98,5 @@ public class Servicios {
 
 		}
 	}
-*/	
+
 }

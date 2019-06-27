@@ -99,12 +99,14 @@ public class VistaAsesores extends JFrame implements InterfazVista{
 	
 	}
 
-	public void setControlador(Controlador controlAsesor) {
-		btnRegistrarAsesor.addActionListener(controlAsesor);
+	@Override
+	public void setControlador(Controlador control) {
+		btnRegistrarAsesor.addActionListener(control);
 		// TODO Auto-generated method stub
 				
 	}
 
+	@Override
 	public void arranca() {
 		
 		pack();// coloca los componentes
@@ -113,25 +115,29 @@ public class VistaAsesores extends JFrame implements InterfazVista{
 	
 	}
 
+	@Override
 	public String getNombreAsesor() {
 		
 		return txtNombreAsesor.getText();
 		
 	}
 
+	@Override
 	public int getIdAsesor() {
 		
 		return Integer.parseInt(txtIdentificacionAsesor.getText());
 	}
 
+	@Override
 	public boolean getEstadoAsesor() {
 		
 		return Boolean.parseBoolean(comboBox.getSelectedItem().toString());
 		
 	}
 
-	public void escribeAsesor(String s) {
-		
-		
+	@Override
+	public String getNombreServicio() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

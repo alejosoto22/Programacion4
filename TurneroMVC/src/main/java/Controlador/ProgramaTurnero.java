@@ -8,8 +8,10 @@ import javax.persistence.Persistence;
 
 import Modelo.Asesores;
 import Modelo.Persona;
+import Modelo.Servicios;
 import Vista.InterfazVista;
 import Vista.VistaAsesores;
+import Vista.VistaServicios;
 
 
 public class ProgramaTurnero {
@@ -17,12 +19,16 @@ public class ProgramaTurnero {
 	public static void main(String[] args) {
 		
 		Asesores modelo = new Asesores();
+		Servicios modeloServicios = new Servicios();
 		
 		InterfazVista vista = new VistaAsesores();
+		InterfazVista vista2 = new VistaServicios();
 		
 		Controlador control = new Controlador(vista, modelo);
+		Controlador controlServicios = new Controlador(vista2, modeloServicios);
 		
 		vista.setControlador(control);
+		vista.setControlador(controlServicios);
 		
 		vista.arranca();
 				
