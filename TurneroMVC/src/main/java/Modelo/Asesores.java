@@ -74,6 +74,8 @@ public class Asesores extends NodoAsesores implements Serializable{
 		}
 		this.tamañoAsesor = this.tamañoAsesor + 1;
 		System.out.println("Se a creado el asesor " + nombreAsesor + " con Id " + idAsesor);
+		System.out.println("El tamaño de la lista es " + this.tamañoAsesor);
+		System.out.println("El estado del asesor es " + estadoAsesor);
 	}
 	
 	

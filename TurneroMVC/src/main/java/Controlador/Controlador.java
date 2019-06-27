@@ -9,21 +9,29 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import Modelo.Asesores;
+import Modelo.Servicios;
 import Vista.InterfazVista;
 //import modelo.Persona;
 
 public class Controlador implements ActionListener{
 	
-//	private static EntityManager manager;
-//	private static EntityManagerFactory emf;
+	private static EntityManager manager;
+	private static EntityManagerFactory emf;
 	
 	private InterfazVista vista;
 	private Asesores modelo;
+	private Servicios modeloServicios;
 		
 	public Controlador(InterfazVista vista, Asesores modelo) {
 		
 		this.vista = vista;
 		this.modelo = modelo;
+	}
+	
+public Controlador(InterfazVista vista, Servicios modeloServicios) {
+		
+		this.vista = vista;
+		this.modeloServicios = modeloServicios;
 	}
 
 	public void actionPerformed(ActionEvent evento) {
@@ -36,7 +44,7 @@ public class Controlador implements ActionListener{
 		boolean estadoAsesor = vista.getEstadoAsesor();
 		
 		modelo.crearAsesor(nombreAsesor, idAsesor, estadoAsesor);
-		modelo.listarAserores();
+//		modelo.listarAserores();
 		
 //		manager.getTransaction().begin();
 //		manager.persist(modelo.getAsesor());

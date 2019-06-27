@@ -12,11 +12,8 @@ import Vista.InterfazVista;
 import Vista.VistaAsesores;
 
 
-public class ProgramaAsesores {
-	
-	private static EntityManager manager;
-	private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("Persistencia");;
-
+public class ProgramaTurnero {
+		
 	public static void main(String[] args) {
 		
 		Asesores modelo = new Asesores();
@@ -31,11 +28,11 @@ public class ProgramaAsesores {
 				
 		
 	//	manager = emf.createEntityManager();
-		crearPersona();
+	//	crearPersona();
 	//	imprimir();
 	}
 	
-	private static void crearPersona() {
+/*	private static void crearPersona() {
 		
 		Persona person = new Persona("ALEJO", 22);
 		
@@ -44,7 +41,7 @@ public class ProgramaAsesores {
 		
 		manager.getTransaction().commit();
 	}
-	
+	*/
 /*	@SuppressWarnings("unchecked")
 	private static void imprimir() {
 		List<Persona> personas = (List<Persona>) manager.createQuery("FROM Persona").getResultList();
