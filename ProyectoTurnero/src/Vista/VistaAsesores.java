@@ -47,6 +47,7 @@ public class VistaAsesores extends JFrame implements InterfazVista{
 	public VistaAsesores() {
 		setFont(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setExtendedState(6);
 		setBounds(100, 100, 659, 259);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

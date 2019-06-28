@@ -19,11 +19,11 @@ public class Programa {
 //		InterfazVistaServicios vistaServicios = new VistaServicios();
 		
 		ControladorAsesores controlAsesores = new ControladorAsesores(vista, modeloAsesores, modeloServicios);
-		ControladorAsesores controlServicios = new ControladorAsesores(vista, modeloAsesores, modeloServicios);
+//		ControladorAsesores controlServicios = new ControladorAsesores(vista, modeloAsesores, modeloServicios);
 //		ControladorServicios controlServicios = new ControladorServicios(vistaServicios, modeloServicios);
 		
 		vista.setControladorAsesor(controlAsesores);
-		vista.setControladorAsesor(controlServicios);
+//		vista.setControladorAsesor(controlServicios);
 //		vistaServicios.setControladorServicio(controlServicios);
 		
 		vista.arranca();

@@ -53,6 +53,7 @@ public class Asesores {
 		}
 		this.tamañoAsesor = this.tamañoAsesor + 1;
 		System.out.println("Se a creado el asesor " + nombreAsesor + " con Id " + idAsesor);
+		System.out.println("La lista tiene " + this.tamañoAsesor + " asesores");
 	}
 	
 	/*	public void crearAsesor(String nombre, int idAsesor, boolean estado, String primerServicio, String segundoServicio, String tercerServicio) {
