@@ -8,7 +8,9 @@
   <persistence-unit name="Persistencia">
   
   <class>
-  Modelo.Turnero
+  
+  Modelo.Persona
+  
   
  </class>
   

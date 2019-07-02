@@ -13,17 +13,17 @@ public class Persona implements Serializable{
 		
 	private static final long serialVersionUID = 1L;
 	
-	@Column(name = "ColmNombre")
+	@Column(name = "ColmNombre",length = 10)
 	private String nombre;
 	
 	@Id
-	@Column(name = "ColmId")
+	@Column(name = "ColmId",length = 3)
 	private int id;
 	
-	@Column(name = "ColmServicio")
+	@Column(name = "ColmServicio",length = 9)
 	private String servicio;
 	
-	@Column(name = "ColmPrioridad")
+	@Column(name = "ColmPrioridad",length = 1)
 	private int prioridad;
 	
 	public Persona() {

@@ -2,10 +2,12 @@ package Modelo;
 
 import java.util.ArrayList;
 
+
+
 public class Turnero {
 	private String nombreTurnero;
-	ArrayList<Persona> listaTurnos = new ArrayList();
-		
+	private ArrayList<Persona> listaTurnos = new ArrayList();
+	private Persona cliente = new Persona();	
 	public Turnero() {
 		super();
 	}
@@ -14,6 +16,9 @@ public class Turnero {
 		cliente.setServicio(servicio);
 		cliente.setPrioridad(prioridad);
 		this.listaTurnos.add(cliente);
+		this.cliente = new Persona(nombre, id);
+		this.cliente.setServicio(servicio);
+		this.cliente.setPrioridad(prioridad);
 		System.out.println("Se a creado el turno " + nombre);
 		System.out.println("La lista tiene " + this.listaTurnos.size() + " turnos.");
 	}
@@ -28,6 +33,12 @@ public class Turnero {
 	}
 	public void setListaTurnos(ArrayList<Persona> listaTurnos) {
 		this.listaTurnos = listaTurnos;
+	}
+	public Persona getCliente() {
+		return cliente;
+	}
+	public void setCliente(Persona cliente) {
+		this.cliente = cliente;
 	}
 	
 }

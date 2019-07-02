@@ -24,7 +24,7 @@ public class Programa {
 		Controlador control = new Controlador(vistaTurnero, modelo);
 		vistaTurnero.setControlador(control);
 		vistaTurnero.arranca();
-
+		
 	}
 
 }
