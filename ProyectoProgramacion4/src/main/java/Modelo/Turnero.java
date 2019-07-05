@@ -11,7 +11,7 @@ public class Turnero {
 	public Turnero() {
 		super();
 	}
-	public void crearTurno(String nombre, int id, String servicio, int prioridad) {
+/*	public void crearTurno(String nombre, int id, String servicio, int prioridad) {
 		Persona cliente = new Persona(nombre, id);
 		cliente.setServicio(servicio);
 		cliente.setPrioridad(prioridad);
@@ -21,7 +21,12 @@ public class Turnero {
 		this.cliente.setPrioridad(prioridad);
 		System.out.println("Se a creado el turno " + nombre);
 		System.out.println("La lista tiene " + this.listaTurnos.size() + " turnos.");
+	}*/
+	
+	public void OrdenarPorServicios(ArrayList lista) {
+		
 	}
+	
 	public String getNombreTurnero() {
 		return nombreTurnero;
 	}

@@ -14,8 +14,10 @@ import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 import javax.swing.DefaultComboBoxModel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
-public class VistaTurnero extends JFrame implements InterfazVista{
+public class VistaTurnero extends JFrame {//implements ActionListener{
 
 	private JPanel contentPane;
 	private JTextField textNombre;
@@ -23,10 +25,8 @@ public class VistaTurnero extends JFrame implements InterfazVista{
 	private JTextField textServicio;
 	JButton btnAceptar;
 	JComboBox comboBoxPrioridad;
-
-	/**
-	 * Launch the application.
-	 */
+//	private Controlador control = new Controlador();
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -45,6 +45,12 @@ public class VistaTurnero extends JFrame implements InterfazVista{
 	 */
 	public VistaTurnero() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setSize(387,365);
+		setTitle("EJEMPLO TURNERO");
+		setLayout(null);
+		
+		setLocationRelativeTo(null);
+				
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -88,9 +94,14 @@ public class VistaTurnero extends JFrame implements InterfazVista{
 		contentPane.add(comboBoxPrioridad);
 		
 		btnAceptar = new JButton("Aceptar");
+	//	btnAceptar.addActionListener(new ActionListener() {
+	//		public void actionPerformed(ActionEvent evento) {
+	//		control.crearTurno(getNombrePersona(), getIdPersona(), getServicioPersona(), getPrioridadPersona());
+	//		}
+	//	});
 		btnAceptar.setBounds(183, 196, 109, 23);
 		contentPane.add(btnAceptar);
-		
+//		btnAceptar.addActionListener(this);
 		JLabel lblServicio = new JLabel("Servicio:");
 		lblServicio.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblServicio.setBounds(108, 139, 84, 17);
@@ -100,11 +111,11 @@ public class VistaTurnero extends JFrame implements InterfazVista{
 		textServicio.setColumns(10);
 		textServicio.setBounds(209, 136, 89, 20);
 		contentPane.add(textServicio);
-	}
-
-	public void setControlador(Controlador control) {
-		btnAceptar.addActionListener(control);
 		
+	}
+	
+	public void setControlador(Controlador control) {
+		btnAceptar.addActionListener(control);		
 	}
 
 	public void arranca() {
@@ -114,22 +125,34 @@ public class VistaTurnero extends JFrame implements InterfazVista{
 		
 	}
 
-	public String getNombreTurnero() {
+	public String getNombrePersona() {
 		return textNombre.getText();
 	}
 
-	public int getIdTurnero() {
+	public int getIdPersona() {
 		return Integer.parseInt(textId.getText());
 	}
 
-	public String getServicioTurnero() {
+	public String getServicioPersona() {
 		return textServicio.getText();
 	}
 
-	public int getPrioridadTurnero() {
+	public int getPrioridadPersona() {
 		if(comboBoxPrioridad.toString() == "Con Prioridad") {
 			return 1;}
 		else {return 0;
 		}
 	}
+	
+//	public void actionPerformed(ActionEvent evento) {
+//		if(evento.getSource() == btnAceptar) {
+	//	btnAceptar.addActionListener(control);
+//		control.crearTurno(getNombrePersona(), getIdPersona(), getServicioPersona(), getPrioridadPersona());
+//		}
+//	}
+/*	public void enviarDatos(Controlador control) {
+		control.getModeloTurno().crearTurno(getNombrePersona(), getIdPersona(), getServicioPersona(), getPrioridadPersona());
+		btnAceptar
+	}*/
+	
 }
