@@ -10,7 +10,7 @@ public class Metodos {
 		Persona cliente = new Persona(nombre, id);
 		
 	}*/
-	
+	/*
 	public void crearTurno(String nombre, int id, String servicio, int prioridad) {
 		Turno turno = new Turno();
 		turno.getCliente().setNombre(nombre);
@@ -21,5 +21,5 @@ public class Metodos {
 		System.out.println("la lista tiene " + this.listaTurnos.size());
 		this.listaTurnos.get(this.listaTurnos.size() - 1).setTurno(this.listaTurnos.size());
 	}
-
+*/
 }

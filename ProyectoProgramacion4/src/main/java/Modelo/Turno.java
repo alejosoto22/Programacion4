@@ -4,13 +4,12 @@ import java.util.ArrayList;
 
 import Controlador.Controlador;
 
-public class Turno extends Persona{
+public class Turno extends Persona {
 	
 	private int turno;
 	private ArrayList<Turno> listaTurnos = new ArrayList<Turno>();
-	private Persona cliente;
-	private Prioridad prioridad;
-	private Servicio servicio;
+	private int prioridad;
+	private String servicio;
 //	private Controlador control = new Controlador();
 	
 	public Turno() {
@@ -26,8 +25,8 @@ public class Turno extends Persona{
 		Turno turno = new Turno();
 		turno.setNombre(nombre);
 		turno.setId(id);
-	//	turno.getServicio().setServicio(servicio);
-	//	turno.getPrioridad().setPrioridad(prioridad);
+		turno.setServicio(servicio);
+		turno.setPrioridad(prioridad);
 		this.listaTurnos.add(turno);
 		System.out.println("la lista tiene " + this.listaTurnos.size() + " turnos.");
 		this.listaTurnos.get(this.listaTurnos.size() - 1).setTurno(this.listaTurnos.size());
@@ -51,27 +50,19 @@ public class Turno extends Persona{
 		this.listaTurnos = listaTurnos;
 	}
 
-	public Persona getCliente() {
-		return cliente;
-	}
-
-	public void setCliente(Persona cliente) {
-		this.cliente = cliente;
-	}
-
-	public Prioridad getPrioridad() {
+	public int getPrioridad() {
 		return prioridad;
 	}
 
-	public void setPrioridad(Prioridad prioridad) {
+	public void setPrioridad(int prioridad) {
 		this.prioridad = prioridad;
 	}
 
-	public Servicio getServicio() {
+	public String getServicio() {
 		return servicio;
 	}
 
-	public void setServicio(Servicio servicio) {
+	public void setServicio(String servicio) {
 		this.servicio = servicio;
 	}
 	
