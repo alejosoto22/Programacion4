@@ -24,6 +24,7 @@ public class VistaTurnero extends JFrame {//implements ActionListener{
 	private JTextField textId;
 	private JTextField textServicio;
 	JButton btnAceptar;
+	public JComboBox<String> comboBoxServiTurno;
 	JComboBox comboBoxPrioridad;
 //	private Controlador control = new Controlador();
 	
@@ -45,11 +46,11 @@ public class VistaTurnero extends JFrame {//implements ActionListener{
 	 */
 	public VistaTurnero() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setSize(387,365);
-		setTitle("EJEMPLO TURNERO");
-		setLayout(null);
+	//	setSize(387,365);
+		setTitle("TURNERO");
+	//	setLayout(null);
 		
-		setLocationRelativeTo(null);
+	//	setLocationRelativeTo(null);
 				
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -112,6 +113,10 @@ public class VistaTurnero extends JFrame {//implements ActionListener{
 		textServicio.setBounds(209, 136, 89, 20);
 		contentPane.add(textServicio);
 		
+		comboBoxServiTurno = new JComboBox();
+		comboBoxServiTurno.setBounds(308, 139, 109, 20);
+		contentPane.add(comboBoxServiTurno);
+		
 	}
 	
 	public void setControlador(Controlador control) {
@@ -136,6 +141,11 @@ public class VistaTurnero extends JFrame {//implements ActionListener{
 	public String getServicioPersona() {
 		return textServicio.getText();
 	}
+	
+	public String getServiTurno() {
+		return comboBoxServiTurno.toString();
+	}
+
 
 	public int getPrioridadPersona() {
 		if(comboBoxPrioridad.toString() == "Con Prioridad") {
@@ -143,16 +153,4 @@ public class VistaTurnero extends JFrame {//implements ActionListener{
 		else {return 0;
 		}
 	}
-	
-//	public void actionPerformed(ActionEvent evento) {
-//		if(evento.getSource() == btnAceptar) {
-	//	btnAceptar.addActionListener(control);
-//		control.crearTurno(getNombrePersona(), getIdPersona(), getServicioPersona(), getPrioridadPersona());
-//		}
-//	}
-/*	public void enviarDatos(Controlador control) {
-		control.getModeloTurno().crearTurno(getNombrePersona(), getIdPersona(), getServicioPersona(), getPrioridadPersona());
-		btnAceptar
-	}*/
-	
 }

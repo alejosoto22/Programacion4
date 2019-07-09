@@ -6,6 +6,8 @@ import Controlador.Controlador;
 
 public class Turno extends Persona {
 	
+	private static final long serialVersionUID = 1L;
+	
 	private int turno;
 	private ArrayList<Turno> listaTurnos = new ArrayList<Turno>();
 	private int prioridad;

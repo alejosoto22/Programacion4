@@ -1,7 +1,7 @@
 package Modelo;
 
-public class Asesor {
-	
+public class Asesor{
+		
 	private String nombreAsesor;
 	private int idAsesor;
 	private boolean activo;
@@ -18,6 +18,8 @@ public class Asesor {
 		this.activo = activo;
 		this.disponible = disponible;
 	}
+	
+//	public void crearAsesor()
 
 	public String getNombreAsesor() {
 		return nombreAsesor;
