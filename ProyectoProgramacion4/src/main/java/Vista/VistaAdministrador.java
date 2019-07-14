@@ -21,6 +21,8 @@ import javax.swing.DefaultComboBoxModel;
 
 public class VistaAdministrador extends JFrame {
 
+	private static final long serialVersionUID = 1L;
+	
 	private JPanel contentPane;
 	public JTextField textNombreServ;
 	public JTextField textNombreAses;
@@ -30,10 +32,10 @@ public class VistaAdministrador extends JFrame {
 	public JComboBox<String> comboBoxServi1;
 	public JComboBox<String> comboBoxServi2;
 	public JComboBox<String> comboBoxServi3;
-//	Servicio modeloServicio = new Servicio();
-	/**
-	 * Launch the application.
-	 */
+	public JComboBox<String> comboBoxEstadoAses;
+	public JButton btnCrearAsesor;
+	public JComboBox<String> comboBoxPuestoAsesor;
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -52,7 +54,7 @@ public class VistaAdministrador extends JFrame {
 	 */
 	public VistaAdministrador() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 697, 331);
+		setBounds(100, 100, 678, 331);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -65,15 +67,15 @@ public class VistaAdministrador extends JFrame {
 		contentPane.add(lblAdministrador);
 		
 		JLabel lblCrearServicio = new JLabel("CREAR SERVICIO");
-		lblCrearServicio.setBounds(30, 69, 99, 14);
+		lblCrearServicio.setBounds(36, 39, 99, 14);
 		contentPane.add(lblCrearServicio);
 		
 		JLabel lblCrearAsesor = new JLabel("CREAR ASESOR");
-		lblCrearAsesor.setBounds(272, 69, 107, 14);
+		lblCrearAsesor.setBounds(278, 39, 107, 14);
 		contentPane.add(lblCrearAsesor);
 		
 		JLabel lblCrearPuestosDe = new JLabel("CREAR PUESTOS DE ATENCI\u00D3N");
-		lblCrearPuestosDe.setBounds(485, 69, 180, 14);
+		lblCrearPuestosDe.setBounds(474, 39, 180, 14);
 		contentPane.add(lblCrearPuestosDe);
 		
 		JLabel lblNombre = new JLabel("Nombre:");
@@ -81,11 +83,11 @@ public class VistaAdministrador extends JFrame {
 		contentPane.add(lblNombre);
 		
 		JLabel label = new JLabel("Nombre:");
-		label.setBounds(246, 113, 48, 14);
+		label.setBounds(243, 79, 48, 14);
 		contentPane.add(label);
 		
 		JLabel label_1 = new JLabel("Nombre:");
-		label_1.setBounds(485, 116, 48, 14);
+		label_1.setBounds(485, 82, 48, 14);
 		contentPane.add(label_1);
 		
 		textNombreServ = new JTextField();
@@ -94,78 +96,97 @@ public class VistaAdministrador extends JFrame {
 		textNombreServ.setColumns(10);
 		
 		textNombreAses = new JTextField();
-		textNombreAses.setBounds(303, 110, 86, 20);
+		textNombreAses.setBounds(300, 76, 86, 20);
 		contentPane.add(textNombreAses);
 		textNombreAses.setColumns(10);
 		
 		textNombrePuest = new JTextField();
-		textNombrePuest.setBounds(534, 113, 86, 20);
+		textNombrePuest.setBounds(534, 79, 86, 20);
 		contentPane.add(textNombrePuest);
 		textNombrePuest.setColumns(10);
 		
 		JLabel lblIdAsesor = new JLabel("Id Asesor:");
-		lblIdAsesor.setBounds(246, 141, 57, 14);
+		lblIdAsesor.setBounds(243, 107, 57, 14);
 		contentPane.add(lblIdAsesor);
 		
 		textIdAses = new JTextField();
 		textIdAses.setColumns(10);
-		textIdAses.setBounds(313, 138, 76, 20);
+		textIdAses.setBounds(310, 104, 76, 20);
 		contentPane.add(textIdAses);
 		
 		JComboBox comboBoxPuesto = new JComboBox();
-		comboBoxPuesto.setBounds(534, 153, 86, 20);
+		comboBoxPuesto.setModel(new DefaultComboBoxModel(new String[] {"Disponible", "No Disponible"}));
+		comboBoxPuesto.setBounds(534, 113, 86, 20);
 		contentPane.add(comboBoxPuesto);
 		
 		JLabel lblEsta = new JLabel("Estado:");
-		lblEsta.setBounds(485, 156, 48, 14);
+		lblEsta.setBounds(485, 116, 48, 14);
 		contentPane.add(lblEsta);
 		
 		comboBoxServi1 = new JComboBox();
 		comboBoxServi1.setModel(new DefaultComboBoxModel(new String[] {"null"}));
-		comboBoxServi1.setBounds(313, 163, 76, 20);
+		comboBoxServi1.setBounds(310, 129, 76, 20);
 		contentPane.add(comboBoxServi1);
 		
 		JLabel lblServicio = new JLabel("Servicio 1:");
-		lblServicio.setBounds(246, 169, 69, 14);
+		lblServicio.setBounds(243, 135, 69, 14);
 		contentPane.add(lblServicio);
 		
 		JLabel lblServicio_1 = new JLabel("Servicio 2:");
-		lblServicio_1.setBounds(246, 197, 69, 14);
+		lblServicio_1.setBounds(243, 163, 69, 14);
 		contentPane.add(lblServicio_1);
 		
 		comboBoxServi2 = new JComboBox();
 		comboBoxServi2.setModel(new DefaultComboBoxModel(new String[] {"null"}));
-		comboBoxServi2.setBounds(313, 191, 76, 20);
+		comboBoxServi2.setBounds(310, 157, 76, 20);
 		contentPane.add(comboBoxServi2);
 		
 		JLabel lblServicio_2 = new JLabel("Servicio 3:");
-		lblServicio_2.setBounds(246, 225, 69, 14);
+		lblServicio_2.setBounds(243, 191, 69, 14);
 		contentPane.add(lblServicio_2);
 		
 		comboBoxServi3 = new JComboBox();
 		comboBoxServi3.setModel(new DefaultComboBoxModel(new String[] {"null"}));
-		comboBoxServi3.setBounds(313, 219, 76, 20);
+		comboBoxServi3.setBounds(310, 185, 76, 20);
 		contentPane.add(comboBoxServi3);
 		
 		btnCrearServicio = new JButton("Crear Servicio");
-		btnCrearServicio.setBounds(30, 164, 115, 23);
+		btnCrearServicio.setBounds(20, 154, 115, 23);
 		contentPane.add(btnCrearServicio);
 		
 		JLabel labelEstadoAses = new JLabel("Estado:");
-		labelEstadoAses.setBounds(246, 250, 69, 14);
+		labelEstadoAses.setBounds(243, 216, 69, 14);
 		contentPane.add(labelEstadoAses);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"true", "false"}));
-		comboBox.setBounds(313, 247, 76, 20);
-		contentPane.add(comboBox);
+		comboBoxEstadoAses = new JComboBox();
+		comboBoxEstadoAses.setModel(new DefaultComboBoxModel(new String[] {"Activo", "Inactivo"}));
+		comboBoxEstadoAses.setBounds(310, 213, 76, 20);
+		contentPane.add(comboBoxEstadoAses);
+		
+		btnCrearAsesor = new JButton("Crear Asesor");
+		btnCrearAsesor.setBounds(275, 247, 107, 23);
+		contentPane.add(btnCrearAsesor);
+		
+		JLabel lblAsesor = new JLabel("Asesor:");
+		lblAsesor.setBounds(485, 147, 69, 14);
+		contentPane.add(lblAsesor);
+		
+		comboBoxPuestoAsesor = new JComboBox();
+		comboBoxPuestoAsesor.setBounds(534, 144, 76, 20);
+		contentPane.add(comboBoxPuestoAsesor);
+		
 	}
 	
-	public void setControladorAdministrador(ControladorAdmin control2) {
-		btnCrearServicio.addActionListener(control2);
-	//	comboBoxServi1.addItem(textIdAses.getText());
+	public void setControladorAdministrador(ControladorAdmin control) {
+		btnCrearServicio.addActionListener(control);
+		btnCrearServicio.setActionCommand("servicio");
 	}
-
+		
+	public void setControladorAsesores(ControladorAdmin control) {
+		btnCrearAsesor.addActionListener(control);
+		btnCrearAsesor.setActionCommand("asesor");
+	}
+	
 	public void arranca() {
 		pack();// coloca los componentes
 		setLocationRelativeTo(null);// centra la ventana en la pantalla
@@ -178,8 +199,8 @@ public class VistaAdministrador extends JFrame {
 	public String getNombreAsesor() {
 		return textNombreAses.getText();
 	}
-	public String getIdAsesor() {
-		return textIdAses.getText();
+	public int getIdAsesor() {
+		return Integer.parseInt(textIdAses.getText());
 	}
 	public String getAsesServi1() {
 		return comboBoxServi1.toString();
@@ -189,5 +210,13 @@ public class VistaAdministrador extends JFrame {
 	}
 	public String getAsesServi3() {
 		return comboBoxServi3.toString();
+	}
+	public boolean getAsesEstado() {
+		if(comboBoxEstadoAses.toString() == "Inactivo") {
+			return true;
+		}else {return true;}
+	}
+	public String getPuestoAsesor() {
+		return comboBoxPuestoAsesor.toString();
 	}
 }

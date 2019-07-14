@@ -19,14 +19,16 @@ import java.awt.event.ActionEvent;
 
 public class VistaTurnero extends JFrame {//implements ActionListener{
 
-	private JPanel contentPane;
-	private JTextField textNombre;
-	private JTextField textId;
-	private JTextField textServicio;
-	JButton btnAceptar;
+	private static final long serialVersionUID = 1L;
+	
+	public JPanel contentPane;
+	public JTextField textNombre;
+	public JTextField textId;
+	public JTextField textServicio;
+	public JButton btnAceptar;
 	public JComboBox<String> comboBoxServiTurno;
-	JComboBox comboBoxPrioridad;
-//	private Controlador control = new Controlador();
+	public JComboBox comboBoxPrioridad;
+	public VistaAdministrador vistaAdmin;
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -120,7 +122,7 @@ public class VistaTurnero extends JFrame {//implements ActionListener{
 	}
 	
 	public void setControlador(Controlador control) {
-		btnAceptar.addActionListener(control);		
+		btnAceptar.addActionListener(control);	
 	}
 
 	public void arranca() {

@@ -19,12 +19,11 @@ import Vista.VistaAdministrador;
 import Vista.VistaTurnero;
 
 public class Controlador implements ActionListener {
-//	private static EntityManager manager;
-//	private static EntityManagerFactory emf;
 
-	private VistaTurnero vistaTurno;// = new VistaTurnero();
-	private Turno modeloTurno;// = new Turno();
+	public VistaTurnero vistaTurno;// = new VistaTurnero();
+	public Turno modeloTurno;// = new Turno();
 	public VistaAdministrador vistaAdmin;
+	public Servicio modeloServicio;
 
 	public Controlador(VistaTurnero vista, Turno modeloTurno) {
 
@@ -41,7 +40,9 @@ public class Controlador implements ActionListener {
 		int prioridadTurno = vistaTurno.getPrioridadPersona();
 				
 		modeloTurno.crearTurno(nombreTurno, idTurno, servicioTurno, prioridadTurno);
-	//	vistaTurno.comboBoxServiTurno.addItem(vistaAdmin.textNombreServ.getText());
+	//	vistaTurno.comboBoxServiTurno.addItem("aa");
+	//	vistaTurno.comboBoxServiTurno.addItem(modeloServicio.getListaTurno().get(0).getNombre());
+		
 	}
 
 }
