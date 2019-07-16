@@ -2,35 +2,33 @@ package Vista;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.Font;
 
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import Controlador.Controlador;
-import javax.swing.JLabel;
-import java.awt.Font;
-import javax.swing.JTextField;
-import javax.swing.JComboBox;
-import javax.swing.JButton;
-import javax.swing.DefaultComboBoxModel;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import Controlador.ControladorAdmin;
 
-public class VistaTurnero extends JFrame {//implements ActionListener{
+public class VistaTurno extends JFrame {
+	
 
-	private static final long serialVersionUID = 1L;
+private static final long serialVersionUID = 1L;
 	
 	public JPanel contentPane;
 	public JTextField textNombre;
 	public JTextField textId;
-	public JTextField textServicio;
 	public JButton btnAceptar;
 	public JComboBox<String> comboBoxServiTurno;
-	public JComboBox comboBoxPrioridad;
+	public JComboBox<String> comboBoxPrioridad;
 	public VistaAdministrador vistaAdmin;
 	
-	public static void main(String[] args) {
+/*	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -42,11 +40,11 @@ public class VistaTurnero extends JFrame {//implements ActionListener{
 			}
 		});
 	}
-
+*/
 	/**
 	 * Create the frame.
 	 */
-	public VistaTurnero() {
+	public VistaTurno() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	//	setSize(387,365);
 		setTitle("TURNERO");
@@ -75,7 +73,7 @@ public class VistaTurnero extends JFrame {//implements ActionListener{
 		textNombre.setBounds(209, 74, 89, 20);
 		contentPane.add(textNombre);
 		
-		JLabel labelId = new JLabel("Identificaci\u00F3n:");
+		JLabel labelId = new JLabel("Identificacion:");
 		labelId.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		labelId.setBounds(108, 108, 84, 17);
 		contentPane.add(labelId);
@@ -110,19 +108,17 @@ public class VistaTurnero extends JFrame {//implements ActionListener{
 		lblServicio.setBounds(108, 139, 84, 17);
 		contentPane.add(lblServicio);
 		
-		textServicio = new JTextField();
-		textServicio.setColumns(10);
-		textServicio.setBounds(209, 136, 89, 20);
-		contentPane.add(textServicio);
-		
 		comboBoxServiTurno = new JComboBox();
-		comboBoxServiTurno.setBounds(308, 139, 109, 20);
+		comboBoxServiTurno.setModel(new DefaultComboBoxModel(new String[] {"null"}));
+		comboBoxServiTurno.setBounds(209, 136, 109, 20);
 		contentPane.add(comboBoxServiTurno);
 		
 	}
 	
-	public void setControlador(Controlador control) {
+	public void setControladorTurno(ControladorAdmin control) {
 		btnAceptar.addActionListener(control);	
+		btnAceptar.setActionCommand("turno");
+	//	vistaAdmin.btnCrearServicio.addActionListener(control);
 	}
 
 	public void arranca() {
@@ -139,10 +135,6 @@ public class VistaTurnero extends JFrame {//implements ActionListener{
 	public int getIdPersona() {
 		return Integer.parseInt(textId.getText());
 	}
-
-	public String getServicioPersona() {
-		return textServicio.getText();
-	}
 	
 	public String getServiTurno() {
 		return comboBoxServiTurno.toString();
@@ -154,5 +146,8 @@ public class VistaTurnero extends JFrame {//implements ActionListener{
 			return 1;}
 		else {return 0;
 		}
+	}
+	public void llenarServicio(String servicio) {
+		comboBoxServiTurno.addItem(servicio);
 	}
 }

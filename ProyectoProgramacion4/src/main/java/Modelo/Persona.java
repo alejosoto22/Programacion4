@@ -1,23 +1,8 @@
 package Modelo;
 
-import java.io.Serializable;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "TablaPersona")
-public class Persona implements Serializable{
+public class Persona{
 		
-	private static final long serialVersionUID = 1L;
-	
-	@Column(name = "ColmNombre",length = 10)
 	private String nombre;
-	
-	@Id
-	@Column(name = "ColmId",length = 3)
 	private int id;
 		
 	public Persona() {
@@ -45,9 +30,5 @@ public class Persona implements Serializable{
 		this.id = id;
 	}
 	
-	@Override
-	public String toString() {
-		return "Persona [nombre=" + nombre + ", id=" + id + "]";
-	}
 		
 }

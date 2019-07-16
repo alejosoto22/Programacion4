@@ -2,18 +2,21 @@ package Modelo;
 
 import java.util.ArrayList;
 
-import Controlador.Controlador;
+
 
 public class Turno extends Persona {
-	
-	private static final long serialVersionUID = 1L;
-	
-	private ArrayList<Turno> listaTurnos = new ArrayList<Turno>();
+		
+	public ArrayList<Turno> listaTurnos = new ArrayList<Turno>();
+	public ArrayList<Turno> listaServicios = new ArrayList<Turno>();
 	private int turno = 0;
 	private int prioridad;
 	private String servicio;
-	private String servicioLista;
+	public Servicio servi;
 	
+	private String servicioLista;
+	private int contador = 0;
+	private int contadorAtender = 0;
+		
 	public Turno() {
 		super();
 	}
@@ -26,21 +29,23 @@ public class Turno extends Persona {
 	}
 	
 	public void crearTurno(String nombre, int id, String servicio, int prioridad) {
-
-		this.listaTurnos.add(new Turno(nombre, id, servicio, prioridad));
+		this.listaTurnos.add(this.contador, new Turno(nombre, id, servicio, prioridad));
+		this.listaTurnos.get(this.contador).setTurno(this.contador + 1);
+		this.contador = this.contador + 1;
+	//	if(this.listaServicios.get(0) == this.listaTurnos)
+		System.out.println("la lista tiene " + this.contador + " turnos.");
+		System.out.println("El turno creado es el " + this.listaTurnos.get(this.contador - 1).getTurno());
+		System.out.println("Se ha creado el turno de " + this.listaTurnos.get(this.contador - 1).getNombre());
+	
+	}
+	
+	public void atender() {
+		System.out.println("Se ha atendido al cliente " + this.listaTurnos.get(this.contadorAtender).getNombre());
+		this.listaTurnos.remove(this.contadorAtender);
 		System.out.println("la lista tiene " + this.listaTurnos.size() + " turnos.");
-		this.turno = this.turno + 1;
-		System.out.println("El turno creado es el " + this.turno);
-		System.out.println("Se ha creado el turno de " + this.listaTurnos.get(this.listaTurnos.size() - 1).getNombre() + " y su Id es " + this.listaTurnos.get(this.listaTurnos.size() - 1).getId());
+	
 	}
 
-	public ArrayList<Turno> getListaTurnos() {
-		return listaTurnos;
-	}
-
-	public void setListaTurnos(ArrayList<Turno> listaTurnos) {
-		this.listaTurnos = listaTurnos;
-	}
 
 	public int getPrioridad() {
 		return prioridad;
@@ -72,6 +77,14 @@ public class Turno extends Persona {
 
 	public void setServicioLista(String servicioLista) {
 		this.servicioLista = servicioLista;
+	}
+
+	public int getContador() {
+		return contador;
+	}
+
+	public void setContador(int contador) {
+		this.contador = contador;
 	}
 	
 }

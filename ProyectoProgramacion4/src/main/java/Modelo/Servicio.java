@@ -3,18 +3,18 @@ package Modelo;
 import java.util.ArrayList;
 
 import Vista.VistaAdministrador;
-import Vista.VistaTurnero;
+
 
 public class Servicio extends Turno {
 
-	private static final long serialVersionUID = 1L;
-
 	private String nombreServicio;
 	private int contador = 0;
-	private ArrayList<ArrayList<Turno>> listaServicios = new ArrayList<ArrayList<Turno>>();
+	public ArrayList<ArrayList<Turno>> listaServicios = new ArrayList<ArrayList<Turno>>();
 	public Turno turno = new Turno();
 	private ArrayList<Turno> listaTurno = new ArrayList<Turno>();
-		
+	private int posicionTurno = 0;
+	private int posicionServicio = 0;
+			
 	public Servicio() {
 		super();
 	}
@@ -35,11 +35,26 @@ public class Servicio extends Turno {
 		
 	}
 
-/*	public void insertarTurno(ArrayList<Turno> listaTurnos) {
-		if(listaTurnos.get(posicionTurno).getServicio() == this.listaServicios2.get(posicionServicio).)
+	public void insertarTurno() {
+		if(listaTurnos.get(0).getServicio() == this.listaServicios.get(posicionServicio).get(0).getServicioLista()) {
+		//	this.listaServicios.get(posicionServicio).add(this.getListaTurnos().get(posicionTurno));
+			// this.getListaTurnos().get(posicionTurno).getServicio()
+			
+		}
+		
 	}
 	
-	*/
+	public String imprimirTurnos() {
+		String result = "";
+		for(int i = 0; i < this.listaServicios.size(); i++) {
+			for(int j = 0; j < this.listaServicios.get(i).size(); j++) {
+				result = this.listaServicios.get(i).get(j).getNombre() + "-";
+				
+			}
+		}
+		return result;
+	}
+	
 	public int getContador() {
 		return contador;
 	}
@@ -56,14 +71,14 @@ public class Servicio extends Turno {
 		this.contador = contador;
 	}
 
-	public ArrayList<ArrayList<Turno>> getListaServicios() {
+/*	public ArrayList<ArrayList<Turno>> getListaServicios() {
 		return listaServicios;
 	}
 
 	public void setListaServicios(ArrayList<ArrayList<Turno>> listaServicios) {
 		this.listaServicios = listaServicios;
 	}
-
+*/
 	public ArrayList<Turno> getListaTurno() {
 		return listaTurno;
 	}

@@ -12,6 +12,8 @@ public class Asesor{
 	private boolean estado;
 	private int contador = 0;
 	private ArrayList<Asesor> listaAsesores = new ArrayList<Asesor>();
+	private String nombrePuesto;
+	private boolean estadoPuesto;
 	
 	public Asesor() {
 		super();
@@ -98,6 +100,22 @@ public class Asesor{
 
 	public void setContador(int contador) {
 		this.contador = contador;
+	}
+
+	public String getNombrePuesto() {
+		return nombrePuesto;
+	}
+
+	public void setNombrePuesto(String nombrePuesto) {
+		this.nombrePuesto = nombrePuesto;
+	}
+
+	public boolean isEstadoPuesto() {
+		return estadoPuesto;
+	}
+
+	public void setEstadoPuesto(boolean estadoPuesto) {
+		this.estadoPuesto = estadoPuesto;
 	}
 	
 }
